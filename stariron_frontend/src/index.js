@@ -1,7 +1,26 @@
+const proxyurl = "https://cors-anywhere.herokuapp.com/"
+const url = "https://zodiacal.herokuapp.com/" 
+const sunUrl = proxyurl + url + "api"
+const moonUrl = proxyurl + url + "moon"
+const risingUrl = proxyurl + url + "rising"
+const elementsUrl = proxyurl + url + "elements"
+const cardinalityUrl = proxyurl + url + "cardinalities"
+
 
 
 document.addEventListener("DOMContentLoaded", evt => {
 
+    const getSun = () => {
+        fetch(sunUrl)
+        .then(resp => resp.json(resp))
+        .then(data => renderSigns(data))
+    }
+    
+    const renderSigns = (signs) => {
+        signs.forEach(sign => console.log(sign))
+    }
+
+    getSun()
     let w = window.innerWidth - 50;
     let h = window.innerHeight
 
