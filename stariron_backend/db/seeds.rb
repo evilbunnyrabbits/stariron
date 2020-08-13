@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+SignObject.destroy_all
 
 user1 = User.create(name: "Test_User")
 
+sign_object1 = SignObject.create(description: "This is a test sign")
+
+favorite1 = Favorite.create(user_id: user1.id, sign_object_id: sign_object1.id)

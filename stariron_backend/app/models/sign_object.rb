@@ -1,4 +1,4 @@
 class SignObject < ApplicationRecord
-  has_many :favorites
-  has_many :users, through: :favorites
+  has_many :favorite
+  has_many :users, through: :favorite
 end
