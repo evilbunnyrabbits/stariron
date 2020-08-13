@@ -1,0 +1,39 @@
+
+body {
+    background-color: black;
+}
+
+.star2px{
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
+    z-index: 1;
+
+}
+
+.star5px{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
+    z-index: 2;
+}
+
+.star10px{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
+}
+
+.star10px{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
+}
