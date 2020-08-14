@@ -24,8 +24,8 @@ body {
 }
 
 .star10px{
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 50%);
@@ -34,7 +34,6 @@ body {
 
 #menu-stars{
     position: absolute;
-    background-color: darkgrey;
     height: 50%;
     width: 50%;
     z-index: 2;

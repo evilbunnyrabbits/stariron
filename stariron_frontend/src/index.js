@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", evt => {
             const x10star = document.createElement('div')
             x10star.classList.add("star10px")
             x10star.dataset.id = i
-            const randomLength = Math.floor(Math.random() * w)
-            const randomHeight = Math.floor(Math.random() * h)
-            x10star.setAttribute("style", "left:50px")
+            const randomLength = Math.floor(Math.random() * 150)
+            const randomHeight = Math.floor(Math.random() * 150)
+            x10star.setAttribute("style", `margin-left:${randomLength}px; margin-top: ${randomHeight}px`)
             menuStars.append(x10star)
         }
 
@@ -125,9 +125,15 @@ document.addEventListener("DOMContentLoaded", evt => {
         // })
     }
 
+    const clickHandler = () => {
+
+
+    }
+
     submitHandler()
     getSunSign()
     generateStars()
+    clickHandler()
     
 })
 
