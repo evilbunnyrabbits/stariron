@@ -28,18 +28,29 @@ document.addEventListener("DOMContentLoaded", evt => {
     const generateStars = () => {
         const starContainer = document.getElementById("star-cluster")
 
+        for(let i=1; i < 4; i++) {
+            const x10star = document.createElement('div')
+            x10star.classList.add("star10px")
+            const randomLength = Math.floor(Math.random() * w)
+            const randomHeight = Math.floor(Math.random() * h)
+            x10star.setAttribute("style", `margin-left:${randomLength - 50}px; margin-top: ${randomHeight - 50}px`)
+            starContainer.append(x10star)
+        }
+
         for(let i=1; i < h; i++) {
             const x2star = document.createElement('div')
             x2star.classList.add("star2px")
             const randomLength = Math.floor(Math.random() * w)
-            x2star.setAttribute("style", `margin-left: ${randomLength}px`)
+            const randomHeight = Math.floor(Math.random() * h)
+            x2star.setAttribute("style", `margin-left: ${randomLength}px; margin-top: ${randomHeight}px`)
             starContainer.append(x2star)
         }
         for(let i=1; i < h; i++) {
             const x5star = document.createElement('div')
             x5star.classList.add("star5px")
             const randomLength = Math.floor(Math.random() * w)
-            x5star.setAttribute("style", `margin-left: ${randomLength}px`)
+            const randomHeight = Math.floor(Math.random() * h)
+            x5star.setAttribute("style", `margin-left:${randomLength}px; margin-top: ${randomHeight}px`)
             starContainer.append(x5star)
         }
 

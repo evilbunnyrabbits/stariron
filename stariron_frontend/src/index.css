@@ -9,8 +9,8 @@ body {
     border-radius: 50%;
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
+    position: absolute;
     z-index: 1;
-
 }
 
 .star5px{
@@ -19,21 +19,17 @@ body {
     border-radius: 50%;
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
+    position: absolute;
     z-index: 2;
 }
 
 .star10px{
-    width: 10px;
-    height: 10px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 50%);
+    position: absolute;
+    z-index: 3;
 }
 
-.star10px{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
-}
