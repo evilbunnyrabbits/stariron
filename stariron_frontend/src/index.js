@@ -11,17 +11,6 @@ const cardinalityUrl = proxyurl + url + "cardinalities"
 
 document.addEventListener("DOMContentLoaded", evt => {
     const base = document.querySelector('.base')
-    // const getSun = () => {
-    //     fetch(sunUrl)
-    //     .then(resp => resp.json(resp))
-    //     .then(data => renderSigns(data))
-    // }
-    
-    // const renderSigns = (signs) => {
-    //     signs.forEach(sign => console.log(sign))
-    // }
-
-    // getSun()
 
     let w = window.innerWidth - 50;
     let h = window.innerHeight
@@ -93,6 +82,7 @@ document.addEventListener("DOMContentLoaded", evt => {
         })
     }
 
+    //vv this is aspirational code vv
     const getSunSign = (month, day) => {
         const signCard = document.createElement('div')
         base.innerHTML = ""
@@ -100,32 +90,31 @@ document.addEventListener("DOMContentLoaded", evt => {
         let sign 
 
         if((month == 1 && day <= 20) || (month == 12 && day >=22)) {
-        //     return sign = "capricorn";
-        //   } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
-        //     return sign = "aquarius";
-        //   } else if((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
-        //     return sign = "pisces";
-        //   } else if((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
-        //     return sign = "aries";
-        //   } else if((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
-        //     return sign = "taurus";
-        //   } else if((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
-        //     return sign = "gemini";
-        //   } else if((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
-        //     return sign = "cancer";
-        //   } else if((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
-        //     return sign = "leo";
-        //   } else 
-          if((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
-            return sign = "virgo";}
-        //   } else if((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
-        //     return sign = "libra";
-        //   } else if((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
-        //     return sign = "scorpio";
-        //   } else if((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
-        //     return sign = "sagittarius";
-        //   }
-          console.log(sign)}
+            return sign = "capricorn";
+          } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
+            return sign = "aquarius";
+          } else if((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+            return sign = "pisces";
+          } else if((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
+            return sign = "aries";
+          } else if((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
+            return sign = "taurus";
+          } else if((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+            return sign = "gemini";
+          } else if((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
+            return sign = "cancer";
+          } else if((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
+            return sign = "leo";
+          } else if((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
+            return sign = "virgo";
+          } else if((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
+            return sign = "libra";
+          } else if((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
+            return sign = "scorpio";
+          } else if((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
+            return sign = "sagittarius";
+          }
+          console.log(sign)
         // fetch(sunUrl, {
         //     method: "POST", 
         //     headers: {
