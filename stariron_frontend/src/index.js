@@ -7,12 +7,10 @@ const elementsUrl = proxyurl + url + "elements"
 const cardinalityUrl = proxyurl + url + "cardinalities"
 
 
-
-
 document.addEventListener("DOMContentLoaded", evt => {
     const base = document.querySelector('.base')
 
-    getSun()
+    //getSun()
     let w = window.innerWidth - 20;
     let h = window.innerHeight - 20;
 
@@ -51,8 +49,6 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     }
 
-    generateStars()
-
     const form = document.createElement('form')
     const formDiv = document.createElement('form')
     formDiv.setAttribute('id', 'form-div')
@@ -70,8 +66,6 @@ document.addEventListener("DOMContentLoaded", evt => {
     formDiv.append(form)
     base.append(formDiv)
 
-    
-    
     
     const submitHandler = () => {
         form.addEventListener('submit', e => {
@@ -131,6 +125,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     submitHandler()
     getSunSign()
+    generateStars()
     
 })
 
