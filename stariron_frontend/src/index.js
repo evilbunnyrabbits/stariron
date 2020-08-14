@@ -21,22 +21,24 @@ document.addEventListener("DOMContentLoaded", evt => {
     }
 
     getSun()
-    let w = window.innerWidth - 50;
-    let h = window.innerHeight
+    let w = window.innerWidth - 20;
+    let h = window.innerHeight - 20;
 
 
     const generateStars = () => {
         const starContainer = document.getElementById("star-cluster")
 
+        //Menu Stars
         for(let i=1; i < 4; i++) {
             const x10star = document.createElement('div')
             x10star.classList.add("star10px")
             const randomLength = Math.floor(Math.random() * w)
             const randomHeight = Math.floor(Math.random() * h)
-            x10star.setAttribute("style", `margin-left:${randomLength - 50}px; margin-top: ${randomHeight - 50}px`)
+            x10star.setAttribute("style", `margin-left:${randomLength - 100}px; margin-top: ${randomHeight}px`)
             starContainer.append(x10star)
         }
 
+        //tiny stars
         for(let i=1; i < h; i++) {
             const x2star = document.createElement('div')
             x2star.classList.add("star2px")
@@ -45,6 +47,8 @@ document.addEventListener("DOMContentLoaded", evt => {
             x2star.setAttribute("style", `margin-left: ${randomLength}px; margin-top: ${randomHeight}px`)
             starContainer.append(x2star)
         }
+
+        //slightly larger stars
         for(let i=1; i < h; i++) {
             const x5star = document.createElement('div')
             x5star.classList.add("star5px")
