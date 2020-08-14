@@ -8,26 +8,28 @@ const cardinalityUrl = proxyurl + url + "cardinalities"
 
 
 document.addEventListener("DOMContentLoaded", evt => {
-    const base = document.querySelector('.base')
+    const menuStars = document.getElementById("menu-stars")
 
+    const getMainStars = () => {
+      for(let i=1; i < 4; i++) {
+        const x10star = document.createElement('div')
+        x10star.classList.add("star10px")
+        x10star.setAttribute('id', `${i}`)
+        const randomLength = Math.floor(Math.random() * 150)
+        const randomHeight = Math.floor(Math.random() * 150)
+        x10star.setAttribute("style", `margin-left:${randomLength}px; margin-top: ${randomHeight}px`)
+        menuStars.append(x10star)
+    }
+    }
     //getSun()
     let w = window.innerWidth - 20;
     let h = window.innerHeight - 20;
 
     const generateStars = () => {
         const starContainer = document.getElementById("star-cluster")
-        const menuStars = document.getElementById("menu-stars")
 
         //Menu Stars
-        for(let i=1; i < 4; i++) {
-            const x10star = document.createElement('div')
-            x10star.classList.add("star10px")
-            x10star.setAttribute('id', `${i}`)
-            const randomLength = Math.floor(Math.random() * 150)
-            const randomHeight = Math.floor(Math.random() * 150)
-            x10star.setAttribute("style", `margin-left:${randomLength}px; margin-top: ${randomHeight}px`)
-            menuStars.append(x10star)
-        }
+        getMainStars()
 
         //tiny stars
         for(let i=1; i < h; i++) {
@@ -51,9 +53,27 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     }
 
+    const clickHandler = () => {
+      document.addEventListener("click", e => {
+          if (e.target.id === "1"){
+            let starForm = e.target
+            menuStars.innerHTML = ""
+            menuStars.append(formCard)
+            console.log("I am div 1")
+          } else if(e.target.id === "2"){
+            console.log("I am div 2")
+          } else if(e.target.id === "3"){
+            console.log("I am div 3")
+          } else if(e.target.id === "form-back-btn"){
+            menuStars.innerHTML = ""
+            getMainStars()
+          }
+      })
+    }
+
     const form = document.createElement('form')
-    const formDiv = document.createElement('form')
-    formDiv.setAttribute('id', 'form-div')
+    const formCard = document.createElement('div')
+    formCard.setAttribute('class', 'card')
     form.innerHTML = `
     <h2 class="header-two">Welcome</h2>
     <label>What is your name?</label>
@@ -65,8 +85,11 @@ document.addEventListener("DOMContentLoaded", evt => {
        min="1900-01-01" max="2022-12-31">
     <input type="submit" name="submit"> 
     `
-    formDiv.append(form)
-    base.append(formDiv)
+    let backBtn = document.createElement('button')
+    backBtn.setAttribute('id', 'form-back-btn')
+    backBtn.innerText = "back"
+    
+    formCard.append(form, backBtn)
 
     
     const submitHandler = () => {
@@ -77,44 +100,51 @@ document.addEventListener("DOMContentLoaded", evt => {
             let date = birthDate.split('-')
             let month = date[1]
             let day = date[2]
+            menuStars.innerHTML = ""
             getSunSign(month, day)
+            
+
             // form.reset()
         })
     }
 
+    const signCard = document.createElement('div')
+    signCard.setAttribute('class', 'card')
+    signCard.setAttribute('id', 'sign-card')
     //vv this is aspirational code vv
     const getSunSign = (month, day) => {
-        const signCard = document.createElement('div')
-        base.innerHTML = ""
-        base.append(signCard)
         let sign 
 
-        if((month == 1 && day <= 20) || (month == 12 && day >=22)) {
-            return sign = "capricorn";
-          } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
-            return sign = "aquarius";
-          } else if((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
-            return sign = "pisces";
-          } else if((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
-            return sign = "aries";
-          } else if((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
-            return sign = "taurus";
-          } else if((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
-            return sign = "gemini";
-          } else if((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
-            return sign = "cancer";
-          } else if((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
-            return sign = "leo";
-          } else if((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
-            return sign = "virgo";
-          } else if((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
-            return sign = "libra";
+        if((month == 01 && day <= 20) || (month == 12 && day >=22)) {
+            sign = "capricorn";
+          } else if ((month == 01 && day >= 21) || (month == 02 && day <= 18)) {
+            sign = "aquarius";
+          } else if((month == 02 && day >= 19) || (month == 03 && day <= 20)) {
+            sign = "pisces";
+          } else if((month == 03 && day >= 21) || (month == 04 && day <= 20)) {
+            sign = "aries";
+          } else if((month == 04 && day >= 21) || (month == 05 && day <= 20)) {
+            sign = "taurus";
+          } else if((month == 05 && day >= 21) || (month == 06 && day <= 20)) {
+            sign = "gemini";
+          } else if((month == 06 && day >= 22) || (month == 07 && day <= 22)) {
+            sign = "cancer";
+          } else if((month == 07 && day >= 23) || (month == 08 && day <= 23)) {
+            sign = "leo";
+          } else if((month == 08 && day >= 24) || (month == 09 && day <= 23)) {
+            sign = "virgo";
+          } else if((month == 09 && day >= 24) || (month == 10 && day <= 23)) {
+            sign = "libra";
           } else if((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
-            return sign = "scorpio";
+            sign = "scorpio";
           } else if((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
-            return sign = "sagittarius";
+            sign = "sagittarius";
           }
-          console.log(sign)
+          let signTitle = document.createElement('h2')
+          signTitle.innerText = `${sign}`
+          signCard.append(signTitle, backBtn)
+          menuStars.append(signCard)
+          
         // fetch(sunUrl, {
         //     method: "POST", 
         //     headers: {
@@ -125,16 +155,9 @@ document.addEventListener("DOMContentLoaded", evt => {
         // })
     }
 
-    const clickHandler = () => {
-      document.addEventListener("click", e => {
-          if (e.target.matches("div.star10px")){
-              
-          }
-      })
-  }
+    
 
     submitHandler()
-    getSunSign()
     generateStars()
     clickHandler()
     
