@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", evt => {
         for(let i=1; i < 4; i++) {
             const x10star = document.createElement('div')
             x10star.classList.add("star10px")
-            x10star.dataset.id = i
+            x10star.setAttribute('id', `${i}`)
             const randomLength = Math.floor(Math.random() * 150)
             const randomHeight = Math.floor(Math.random() * 150)
             x10star.setAttribute("style", `margin-left:${randomLength}px; margin-top: ${randomHeight}px`)
@@ -126,9 +126,12 @@ document.addEventListener("DOMContentLoaded", evt => {
     }
 
     const clickHandler = () => {
-
-
-    }
+      document.addEventListener("click", e => {
+          if (e.target.matches("div.star10px")){
+              
+          }
+      })
+  }
 
     submitHandler()
     getSunSign()
