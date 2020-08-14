@@ -20,7 +20,7 @@ body {
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
     position: absolute;
-    z-index: 2;
+    z-index: 1;
 }
 
 .star10px{
@@ -30,6 +30,18 @@ body {
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 50%);
     position: absolute;
-    z-index: 3;
+    z-index: 2;
+}
+
+#menu-stars{
+    position: absolute;
+    background-color: darkgrey;
+    height: 50%;
+    width: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    top: 25%;
+    left: 25%;
 }
 

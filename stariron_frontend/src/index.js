@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     const generateStars = () => {
         const starContainer = document.getElementById("star-cluster")
+        const menuStars = document.getElementById("menu-stars")
 
         //Menu Stars
         for(let i=1; i < 4; i++) {
@@ -23,8 +24,8 @@ document.addEventListener("DOMContentLoaded", evt => {
             x10star.classList.add("star10px")
             const randomLength = Math.floor(Math.random() * w)
             const randomHeight = Math.floor(Math.random() * h)
-            x10star.setAttribute("style", `margin-left:${randomLength - 100}px; margin-top: ${randomHeight}px`)
-            starContainer.append(x10star)
+            //x10star.setAttribute("style", `margin-left:${randomLength - 100}px; margin-top: ${randomHeight}px`)
+            menuStars.append(x10star)
         }
 
         //tiny stars

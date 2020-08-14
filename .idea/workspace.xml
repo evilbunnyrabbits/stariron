@@ -11,6 +11,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11325696-7cb9-4aae-a85b-06a6d819573d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/stariron_backend/app/controllers/users.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/config/initializers/cors.rb" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/config/initializers/cors.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/log/development.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/0e/2762f640976e20" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/0e/2762f640976e20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/17/207f0048cdde7a" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/17/207f0048cdde7a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/90/9a29a4be789eaf" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/90/9a29a4be789eaf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/b1/1f570cb6f416c1" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/b1/1f570cb6f416c1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/fa/f844f037a4a326" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-compile-cache/fa/f844f037a4a326" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_frontend/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stariron_frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +91,9 @@
       <workItem from="1597345462179" duration="1138000" />
       <workItem from="1597349415537" duration="860000" />
       <workItem from="1597350282432" duration="1758000" />
-      <workItem from="1597352700162" duration="8033000" />
+      <workItem from="1597352700162" duration="9440000" />
+      <workItem from="1597424399680" duration="1241000" />
+      <workItem from="1597425835364" duration="637000" />
     </task>
     <servers />
   </component>
