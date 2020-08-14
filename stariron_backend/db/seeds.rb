@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 SignObject.destroy_all
+Favorite.destroy_all
 
 user1 = User.create(name: "Test_User")
 
