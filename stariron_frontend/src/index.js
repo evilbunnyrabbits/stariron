@@ -125,16 +125,10 @@ document.addEventListener("DOMContentLoaded", evt => {
         // })
     }
 
-    const clickHandler = () => {
-
-
-    }
 
     submitHandler()
     getSunSign()
     generateStars()
-    clickHandler()
-    
 })
 
 /* 

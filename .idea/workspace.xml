@@ -12,11 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="11325696-7cb9-4aae-a85b-06a6d819573d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stariron_backend/app/controllers/favorites_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/app/controllers/favorites_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stariron_backend/app/controllers/sign_object_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/app/controllers/sign_object_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stariron_backend/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stariron_backend/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stariron_frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_frontend/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stariron_frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +80,7 @@
       <workItem from="1597352700162" duration="9440000" />
       <workItem from="1597424399680" duration="1241000" />
       <workItem from="1597425835364" duration="4012000" />
-      <workItem from="1597430391842" duration="2408000" />
+      <workItem from="1597430391842" duration="3642000" />
     </task>
     <servers />
   </component>
