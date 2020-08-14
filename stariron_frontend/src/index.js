@@ -22,9 +22,10 @@ document.addEventListener("DOMContentLoaded", evt => {
         for(let i=1; i < 4; i++) {
             const x10star = document.createElement('div')
             x10star.classList.add("star10px")
+            x10star.dataset.id = i
             const randomLength = Math.floor(Math.random() * w)
             const randomHeight = Math.floor(Math.random() * h)
-            //x10star.setAttribute("style", `margin-left:${randomLength - 100}px; margin-top: ${randomHeight}px`)
+            x10star.setAttribute("style", "left:50px")
             menuStars.append(x10star)
         }
 

@@ -10,7 +10,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11325696-7cb9-4aae-a85b-06a6d819573d" name="Default Changelist" comment="" />
+    <list default="true" id="11325696-7cb9-4aae-a85b-06a6d819573d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_frontend/src/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +42,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -75,7 +80,7 @@
       <workItem from="1597350282432" duration="1758000" />
       <workItem from="1597352700162" duration="9440000" />
       <workItem from="1597424399680" duration="1241000" />
-      <workItem from="1597425835364" duration="978000" />
+      <workItem from="1597425835364" duration="3489000" />
     </task>
     <servers />
   </component>
