@@ -59,15 +59,21 @@ document.addEventListener("DOMContentLoaded", evt => {
             let starForm = e.target
             menuStars.innerHTML = ""
             menuStars.append(formCard)
-            console.log("I am div 1")
-          } else if(e.target.id === "2"){
-            console.log("I am div 2")
-          } else if(e.target.id === "3"){
-            console.log("I am div 3")
+            form.reset()
           } else if(e.target.id === "form-back-btn"){
             menuStars.innerHTML = ""
             getMainStars()
-          }
+          } else if(e.target.id === "sign-back-btn"){
+            menuStars.innerHTML = ""
+            formCard.append(backBtn)
+            menuStars.append(formCard)
+          } else if(e.target.id === "2"){
+            menuStars.innerHTML = ""
+            signCard.append(backBtn)
+            menuStars.append(signCard)
+          } else if(e.target.id === "3"){
+            console.log("I am div 3")
+          } 
       })
     }
 
@@ -87,7 +93,10 @@ document.addEventListener("DOMContentLoaded", evt => {
     `
     let backBtn = document.createElement('button')
     backBtn.setAttribute('id', 'form-back-btn')
-    backBtn.innerText = "back"
+    backBtn.innerText = "main"
+    let backToForm = document.createElement('button')
+    backToForm.setAttribute('id', 'sign-back-btn')
+    backToForm.innerText = "back to form"
     
     formCard.append(form, backBtn)
 
@@ -140,9 +149,11 @@ document.addEventListener("DOMContentLoaded", evt => {
           } else if((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
             sign = "sagittarius";
           }
-          let signTitle = document.createElement('h2')
-          signTitle.innerText = `${sign}`
-          signCard.append(signTitle, backBtn)
+          signCard.innerHTML = ""
+          signCard.innerHTML = `
+          <h2>${sign}</h2>
+          `
+          signCard.append(backBtn, backToForm)
           menuStars.append(signCard)
           
         // fetch(sunUrl, {
