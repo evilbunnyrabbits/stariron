@@ -7,10 +7,16 @@ const elementsUrl = proxyurl + url + "elements"
 const cardinalityUrl = proxyurl + url + "cardinalities"
 const signObjectUrl = "http://127.0.0.1:3000/sign_object/"
 const favoritesUrl = "http://127.0.0.1:3000/favorites/"
-const usersUrl = "http://127.0.0.1:3000/users/"
+const usersUrl = "http://127.0.0.1:3000/users/1"
+
 let w = window.innerWidth - 20;
 let h = window.innerHeight - 20;
+
 const menuStars = document.getElementById("menu-stars")
+const formCard = document.createElement('div')
+    formCard.setAttribute('class', 'card')
+const form = document.createElement('form')
+    form.classList = "form"
 
 document.addEventListener("DOMContentLoaded", evt => {
 
@@ -58,6 +64,7 @@ document.addEventListener("DOMContentLoaded", evt => {
       document.addEventListener("click", e => {
           if (e.target.id === "1"){
               menuStars.innerHTML = ""
+              getUser()
               formCard.append(backBtn)
               menuStars.append(formCard)
               form.reset()
@@ -78,6 +85,7 @@ document.addEventListener("DOMContentLoaded", evt => {
           } 
       })
     }
+
 
     const renderFavCard = (menuStars) => {
         const favCard = document.createElement('div')
@@ -112,26 +120,33 @@ document.addEventListener("DOMContentLoaded", evt => {
     }
 
 
-    const form = document.createElement('form')
-    const formCard = document.createElement('div')
-    formCard.setAttribute('class', 'card')
-    form.classList = "form"
-    form.innerHTML = `
+    const getUser = () => {
+      fetch(usersUrl)
+      .then(resp => resp.json())
+      .then(data => renderUser(data))
+    }
+
+
+    function renderUser(user){
+      form.innerHTML = ""
+      form.innerHTML = `
     <h2 class="header-two">Welcome</h2>
     <label>What is your name?</label>
     <br>
-    <input type="text" name="name" placeholder="name" value="">
+    <input type="text" name="name" placeholder="name" value="${user.name}">
     </br>
     </br>
     <label>Date of Birth</label>
     <br>
     <input type="date" id="birth-date" name="birth-date"
-       value=""
+       value="${user.birthday}"
        min="1900-01-01" max="2022-12-31">
        <br>
        </br>
     <input type="submit" name="submit"></br></br>
     `
+    submitHandler(form, user)
+    }
 
     let backBtn = document.createElement('button')
     backBtn.setAttribute('id', 'form-back-btn')
@@ -147,24 +162,38 @@ document.addEventListener("DOMContentLoaded", evt => {
     formCard.append(form, backBtn)
 
     
-    const submitHandler = () => {
+    const submitHandler = (info, user) => {
         form.addEventListener('submit', e => {
             e.preventDefault()
+            console.log(info)
+            const birthDate = info.querySelector("#birth-date").value 
+            const name = info.name.value 
+            console.log(name)
+            console.log(birthDate)
+
+          fetch(usersUrl, {
+            method: 'PATCH', 
+            headers: {
+              "content-type": "application/json", 
+              "accepts": "application/json"
+            }, 
+            body:JSON.stringify({name: name, birthday: birthDate})
+          }) 
+          .then(resp => resp.json)
+            
             // get sun sign info()
-            const birthDate = document.querySelector("#birth-date").value
+            
             let date = birthDate.split('-')
             let month = date[1]
             let day = date[2]
             menuStars.innerHTML = ""
             let sign = calculateSun(month, day)
+
             signCard.innerHTML = ""
             signCard.innerHTML = `
             <h2 id="sign-name">${sign}</h2>
             `
             getSunSign()
-
-            
-
             // form.reset()
         })
     }
@@ -234,20 +263,30 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     }}
     
-    // function renderSign(signObj) {
-    //   
+    // function renderSign(signObj) {  
     // }
 
-    submitHandler()
+    
     generateStars()
     clickHandler()
 })
 
 /* 
-
-Create a form that loads upon open 
-    takes a name 
-    takes birthday 
-    on submit (prevDef + render showPage with sun sign connected to Birthday)
-
+I moved the form sign down here 
 */
+form.innerHTML = `
+<h2 class="header-two">Welcome</h2>
+<label>What is your name?</label>
+<br>
+<input type="text" name="name" placeholder="name" value="">
+</br>
+</br>
+<label>Date of Birth</label>
+<br>
+<input type="date" id="birth-date" name="birth-date"
+   value=""
+   min="1900-01-01" max="2022-12-31">
+   <br>
+   </br>
+<input type="submit" name="submit"></br></br>
+`
