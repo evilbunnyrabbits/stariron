@@ -80,23 +80,35 @@ document.addEventListener("DOMContentLoaded", evt => {
     const form = document.createElement('form')
     const formCard = document.createElement('div')
     formCard.setAttribute('class', 'card')
+    form.classList = "form"
     form.innerHTML = `
     <h2 class="header-two">Welcome</h2>
     <label>What is your name?</label>
-    <input type="text" name="name" placeholder="name">
     <br>
+    <input type="text" name="name" placeholder="name">
+    </br>
+    </br>
     <label>Date of Birth</label>
+    <br>
     <input type="date" id="birth-date" name="birth-date"
        value=""
        min="1900-01-01" max="2022-12-31">
-    <input type="submit" name="submit"> 
+       <br>
+       </br>
+    <input type="submit" name="submit"></br></br>
     `
+  
     let backBtn = document.createElement('button')
     backBtn.setAttribute('id', 'form-back-btn')
+    backBtn.classList = "btn btn-white btn-animated"
     backBtn.innerText = "main"
+
+    
     let backToForm = document.createElement('button')
     backToForm.setAttribute('id', 'sign-back-btn')
+    backToForm.classList = "btn btn-white btn-animated"
     backToForm.innerText = "back to form"
+    
     
     formCard.append(form, backBtn)
 
