@@ -13,8 +13,6 @@ let w = window.innerWidth - 20;
 let h = window.innerHeight - 20;
 
 const menuStars = document.getElementById("menu-stars")
-
-const menuStars = document.getElementById("menu-stars")
 const formCard = document.createElement('div')
     formCard.setAttribute('class', 'card')
 const form = document.createElement('form')
@@ -263,8 +261,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     }}
     
-    // function renderSign(signObj) {
-    //   
+    // function renderSign(signObj) {  
     // }
 
     
@@ -273,12 +270,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 })
 
 /* 
-
-Create a form that loads upon open 
-    takes a name 
-    takes birthday 
-    on submit (prevDef + render showPage with sun sign connected to Birthday)
-
+I moved the form sign down here 
 */
 form.innerHTML = `
 <h2 class="header-two">Welcome</h2>
