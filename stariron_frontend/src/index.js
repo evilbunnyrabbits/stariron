@@ -194,6 +194,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     submitHandler()
     generateStars()
+    clickHandler()
 })
 
 /* 
