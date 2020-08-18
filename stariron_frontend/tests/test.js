@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", e => {
         }
 
         const packet = {
-            method: "POST",
+            method: "PATCH",
             headers: {
                 "content-type": "application/json",
                 "accept": "application/json"
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", e => {
             body: JSON.stringify(data)
         }
 
-        fetch(usersUrl, packet)
+        fetch(usersUrl + 1, packet)
             .then(res => res.json())
     }
 
