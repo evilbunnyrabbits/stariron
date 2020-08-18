@@ -10,8 +10,6 @@ const cardinalityUrl = proxyurl + url + "cardinalities"
 document.addEventListener("DOMContentLoaded", evt => {
     const menuStars = document.getElementById("menu-stars")
 
-    
-
     const getMainStars = () => {
       for(let i=1; i < 4; i++) {
         const x10star = document.createElement('div')
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", evt => {
         menuStars.append(x10star)
     }
     }
-    //getSun()
+    
     let w = window.innerWidth - 20;
     let h = window.innerHeight - 20;
 
@@ -178,19 +176,21 @@ document.addEventListener("DOMContentLoaded", evt => {
     }
 
     function renderSigns(signs){
-      signs.forEach(signObj => renderSign(signObj))
-    }
-    function renderSign(signObj) {
       let sign = signCard.querySelector('#sign-name').innerText
-      console.log(sign)
-      let p = document.createElement('p')
-      if(sign === signObj.name){
-        p.innerText = `${signObj.mental_traits}`
-      }
-      
-      signCard.append(p,backBtn, backToForm)
-      menuStars.append(signCard)
-    }
+      if (sign != null || undefined) {
+       let p = document.createElement('p')
+       signObj = signs.filter(name => name.name === sign)
+       p.innerText = `${signObj[0].mental_traits}`
+
+       signCard.append(p, backBtn, backToForm)
+       menuStars.append(signCard)
+      // signs.forEach(signObj => renderSign(signObj))
+
+    }}
+    
+    // function renderSign(signObj) {
+    //   
+    // }
 
     submitHandler()
     generateStars()
