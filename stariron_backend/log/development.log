@@ -28493,3 +28493,57 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 737)
 
 
+Started GET "/users/1" for 127.0.0.1 at 2020-08-18 13:46:35 -0400
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-18 13:46:35 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SignObjectController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSignObject Load (1.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 4.5ms | Allocations: 8075)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 6.8ms | Allocations: 9674)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-18 13:46:36 -0400
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-18 13:46:36 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 897)
+
+
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 2198)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-18 13:47:08 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "birthday" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "Ben Garlock"], ["birthday", "1983-05-02"], ["updated_at", "2020-08-18 17:47:08.943521"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 3462)
+
+
+Started GET "/users/1/" for ::1 at 2020-08-18 13:47:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 737)
+
+
