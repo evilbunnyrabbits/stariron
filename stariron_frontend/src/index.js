@@ -12,17 +12,6 @@ let w = window.innerWidth - 20;
 let h = window.innerHeight - 20;
 const menuStars = document.getElementById("menu-stars")
 
-
-fetch(usersUrl + 1)
-    .then(res => res.json())
-    .then(user => {
-        console.log(user.name)
-        console.log(user.birthday)
-    })
-
-
-
-
 document.addEventListener("DOMContentLoaded", evt => {
 
 
@@ -87,9 +76,39 @@ document.addEventListener("DOMContentLoaded", evt => {
               menuStars.append(signCard)
           } else if(e.target.id === "3"){
               menuStars.innerHTML = ""
-              console.log("I am div 3")
+              renderFavCard(menuStars)
           } 
       })
+    }
+
+    const renderFavCard = (menuStars) => {
+        const favCard = document.createElement('div')
+        const favList = document.createElement("ul")
+        favCard.setAttribute("class", "card")
+        favCard.append(favList)
+
+        fetch(favoritesUrl)
+            .then(res => res.json())
+            .then(favorites => favorites.forEach(fav => {
+                const signId = fav.id
+
+                fetch(signObjectUrl + signId)
+                    .then(res => res.json())
+                    .then(signObj => {
+
+                        const signObjLi = document.createElement('li')
+
+                        signObjLi.innerText = signObj.description
+                        console.log(signObjLi)
+                        favList.append(signObjLi)
+                    })
+
+
+            }))
+
+
+
+        menuStars.append(favCard)
     }
 
 
