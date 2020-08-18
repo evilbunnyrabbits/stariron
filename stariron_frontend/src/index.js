@@ -5,10 +5,16 @@ const moonUrl = proxyurl + url + "moon"
 const risingUrl = proxyurl + url + "rising"
 const elementsUrl = proxyurl + url + "elements"
 const cardinalityUrl = proxyurl + url + "cardinalities"
+const signObjectUrl = "http://127.0.0.1:3000/sign_object/"
+const favoritesUrl = "http://127.0.0.1:3000/favorites/"
+const usersUrl = "http://127.0.0.1:3000/users/"
+let userObj = {}
+let w = window.innerWidth - 20;
+let h = window.innerHeight - 20;
+const menuStars = document.getElementById("menu-stars")
 
 
 document.addEventListener("DOMContentLoaded", evt => {
-    const menuStars = document.getElementById("menu-stars")
 
     const getMainStars = () => {
       for(let i=1; i < 4; i++) {
@@ -21,9 +27,6 @@ document.addEventListener("DOMContentLoaded", evt => {
         menuStars.append(x10star)
     }
     }
-    
-    let w = window.innerWidth - 20;
-    let h = window.innerHeight - 20;
 
     const generateStars = () => {
         const starContainer = document.getElementById("star-cluster")
@@ -77,6 +80,19 @@ document.addEventListener("DOMContentLoaded", evt => {
       })
     }
 
+
+
+    fetch(usersUrl + 1)
+            .then(res => res.json())
+            .then(user => {
+                userObj.name = user.name
+                userObj.birthday = user.birthday
+            })
+
+
+
+
+
     const form = document.createElement('form')
     const formCard = document.createElement('div')
     formCard.setAttribute('class', 'card')
@@ -85,31 +101,30 @@ document.addEventListener("DOMContentLoaded", evt => {
     <h2 class="header-two">Welcome</h2>
     <label>What is your name?</label>
     <br>
-    <input type="text" name="name" placeholder="name">
+    <input type="text" name="name" placeholder="name" value="${userObj.name}">
     </br>
     </br>
     <label>Date of Birth</label>
     <br>
     <input type="date" id="birth-date" name="birth-date"
-       value=""
+       value="${userObj.birthday}"
        min="1900-01-01" max="2022-12-31">
        <br>
        </br>
     <input type="submit" name="submit"></br></br>
     `
-  
+
     let backBtn = document.createElement('button')
     backBtn.setAttribute('id', 'form-back-btn')
     backBtn.classList = "btn btn-white btn-animated"
     backBtn.innerText = "main"
 
-    
     let backToForm = document.createElement('button')
     backToForm.setAttribute('id', 'sign-back-btn')
     backToForm.classList = "btn btn-white btn-animated"
     backToForm.innerText = "back to form"
-    
-    
+
+
     formCard.append(form, backBtn)
 
     
@@ -123,7 +138,6 @@ document.addEventListener("DOMContentLoaded", evt => {
             let day = date[2]
             menuStars.innerHTML = ""
             let sign = calculateSun(month, day)
-            console.log(sign)
             signCard.innerHTML = ""
             signCard.innerHTML = `
             <h2 id="sign-name">${sign}</h2>
