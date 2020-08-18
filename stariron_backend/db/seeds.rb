@@ -9,7 +9,7 @@ User.destroy_all
 SignObject.destroy_all
 Favorite.destroy_all
 
-user1 = User.create(name: "Test_User")
+user1 = User.create(name: "Test_User", birthday: "2015-12-08")
 
 sign_object1 = SignObject.create(description: "This is a test sign")
 
