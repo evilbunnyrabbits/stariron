@@ -10,6 +10,11 @@ class SignObjectController < ApplicationController
     render json: sign_object
   end
 
+  def show
+    sign_object = SignObject.find(params[:id])
+    render json: sign_object
+  end
+
   def update
     sign_object = SignObject.find(params[:id])
     sign_object.update!(sign_object_params)
