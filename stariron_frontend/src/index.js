@@ -10,6 +10,8 @@ const cardinalityUrl = proxyurl + url + "cardinalities"
 document.addEventListener("DOMContentLoaded", evt => {
     const menuStars = document.getElementById("menu-stars")
 
+    
+
     const getMainStars = () => {
       for(let i=1; i < 4; i++) {
         const x10star = document.createElement('div')
@@ -56,8 +58,8 @@ document.addEventListener("DOMContentLoaded", evt => {
     const clickHandler = () => {
       document.addEventListener("click", e => {
           if (e.target.id === "1"){
-            let starForm = e.target
             menuStars.innerHTML = ""
+            formCard.append(backBtn)
             menuStars.append(formCard)
             form.reset()
           } else if(e.target.id === "form-back-btn"){
@@ -104,13 +106,20 @@ document.addEventListener("DOMContentLoaded", evt => {
     const submitHandler = () => {
         form.addEventListener('submit', e => {
             e.preventDefault()
-            // getSunSignInfo()
+            // get sun sign info()
             const birthDate = document.querySelector("#birth-date").value
             let date = birthDate.split('-')
             let month = date[1]
             let day = date[2]
             menuStars.innerHTML = ""
-            getSunSign(month, day)
+            let sign = calculateSun(month, day)
+            console.log(sign)
+            signCard.innerHTML = ""
+            signCard.innerHTML = `
+            <h2 id="sign-name">${sign}</h2>
+            `
+            getSunSign()
+
             
 
             // form.reset()
@@ -120,50 +129,67 @@ document.addEventListener("DOMContentLoaded", evt => {
     const signCard = document.createElement('div')
     signCard.setAttribute('class', 'card')
     signCard.setAttribute('id', 'sign-card')
-    //vv this is aspirational code vv
-    const getSunSign = (month, day) => {
+    
+    const calculateSun = (month, day) => {
         let sign 
 
         if((month == 01 && day <= 20) || (month == 12 && day >=22)) {
-            sign = "capricorn";
+            sign = "Capricorn";
+            return sign
           } else if ((month == 01 && day >= 21) || (month == 02 && day <= 18)) {
-            sign = "aquarius";
+            sign = "Aquarius";
+            return sign
           } else if((month == 02 && day >= 19) || (month == 03 && day <= 20)) {
-            sign = "pisces";
+            sign = "Pisces";
+            return sign
           } else if((month == 03 && day >= 21) || (month == 04 && day <= 20)) {
-            sign = "aries";
+            sign = "Aries";
+            return sign
           } else if((month == 04 && day >= 21) || (month == 05 && day <= 20)) {
-            sign = "taurus";
+            sign = "Taurus";
+            return sign
           } else if((month == 05 && day >= 21) || (month == 06 && day <= 20)) {
-            sign = "gemini";
+            sign = "Gemini";
+            return sign
           } else if((month == 06 && day >= 22) || (month == 07 && day <= 22)) {
-            sign = "cancer";
+            sign = "Cancer";
+            return sign
           } else if((month == 07 && day >= 23) || (month == 08 && day <= 23)) {
-            sign = "leo";
+            sign = "Leo";
+            return sign
           } else if((month == 08 && day >= 24) || (month == 09 && day <= 23)) {
-            sign = "virgo";
+            sign = "Virgo";
+            return sign
           } else if((month == 09 && day >= 24) || (month == 10 && day <= 23)) {
-            sign = "libra";
+            sign = "Libra";
+            return sign
           } else if((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
-            sign = "scorpio";
+            sign = "Scorpio";
+            return sign
           } else if((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
-            sign = "sagittarius";
+            sign = "Sagittarius";
+            return sign
           }
-          signCard.innerHTML = ""
-          signCard.innerHTML = `
-          <h2>${sign}</h2>
-          `
-          signCard.append(backBtn, backToForm)
-          menuStars.append(signCard)
-          
-        // fetch(sunUrl, {
-        //     method: "POST", 
-        //     headers: {
-        //         'content-type': 'application/json', 
-        //         accepts: 'application/json'
-        //     },
-        //     body: JSON.stringify()
-        // })
+    }
+    const getSunSign = () => {
+      fetch(sunUrl)
+      .then(resp => resp.json())
+      .then(signs => renderSigns(signs))
+    }
+
+    function renderSigns(signs){
+      signs.forEach(signObj => renderSign(signObj))
+    }
+    function renderSign(signObj) {
+      let sign = signCard.querySelector('#sign-name').innerText
+      console.log(sign)
+      let p = document.createElement('p')
+      if(sign === signObj.name){
+        p.innerText = `${signObj.mental_traits}`
+      }
+      
+      signCard.append(p,backBtn, backToForm)
+      menuStars.append(signCard)
     }
 
     submitHandler()

@@ -11,7 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11325696-7cb9-4aae-a85b-06a6d819573d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/stariron_frontend/tests/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stariron_frontend/tests/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/stariron_backend/app/controllers/sign_object_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/app/controllers/sign_object_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/log/development.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stariron_backend/tmp/pids/server.pid" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_backend/tmp/pids/server.pid" afterDir="false" />
+>>>>>>> d1e23e233f115449e4925ca2bc2ef325f46c4686
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +30,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Ruby File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -46,6 +55,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RubyModuleManagerSettings">
     <option name="blackListedRootsPaths">
@@ -54,12 +64,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.test.html">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/StarIron/stariron_frontend/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/stariron/stariron_frontend/tests/test.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.test.html" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -79,11 +93,17 @@
       <workItem from="1597352700162" duration="9440000" />
       <workItem from="1597424399680" duration="1241000" />
       <workItem from="1597425835364" duration="4012000" />
+<<<<<<< HEAD
       <workItem from="1597430391842" duration="3642000" />
       <workItem from="1597446529569" duration="581000" />
       <workItem from="1597580420351" duration="14000" />
       <workItem from="1597670052403" duration="132000" />
       <workItem from="1597672680817" duration="797000" />
+=======
+      <workItem from="1597430391842" duration="2408000" />
+      <workItem from="1597673591178" duration="132000" />
+      <workItem from="1597673731997" duration="3145000" />
+>>>>>>> d1e23e233f115449e4925ca2bc2ef325f46c4686
     </task>
     <servers />
   </component>
@@ -101,5 +121,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="386" y="142" key="SettingsEditor" timestamp="1597673718607">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state x="386" y="142" key="SettingsEditor/1920.23.1920.1057/0.23.1920.988@0.23.1920.988" timestamp="1597673718607" />
   </component>
 </project>

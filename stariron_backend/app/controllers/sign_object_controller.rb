@@ -6,25 +6,26 @@ class SignObjectController < ApplicationController
   end
 
   def create
-    sign_object = SignObject.find_by(params[:id])
+    sign_object = SignObject.create!(sign_object_params)
     render json: sign_object
   end
 
   def update
-    sign_object = SignObject.find_by(params[:id])
-    sign_object.update!(favorite_params)
+    sign_object = SignObject.find(params[:id])
+    sign_object.update!(sign_object_params)
     render json: sign_object
   end
 
   def destroy
-    sign_object = SignObject.find_by(params[:id])
+    sign_object = SignObject.find(params[:id])
+    puts sign_object
     sign_object.destroy!
     render json: {}
   end
 
   private
 
-  def favorite_params
+  def sign_object_params
     params.require(:sign_object).permit(:description)
   end
 
