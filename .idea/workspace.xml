@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="11325696-7cb9-4aae-a85b-06a6d819573d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stariron_frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/stariron_frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +80,10 @@
       <workItem from="1597424399680" duration="1241000" />
       <workItem from="1597425835364" duration="4012000" />
       <workItem from="1597430391842" duration="3642000" />
+      <workItem from="1597446529569" duration="581000" />
+      <workItem from="1597580420351" duration="14000" />
+      <workItem from="1597670052403" duration="132000" />
+      <workItem from="1597672680817" duration="797000" />
     </task>
     <servers />
   </component>
