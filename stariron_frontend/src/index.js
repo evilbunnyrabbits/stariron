@@ -14,8 +14,6 @@ const menuStars = document.getElementById("menu-stars")
 
 document.addEventListener("DOMContentLoaded", evt => {
 
-
-
     const getMainStars = () => {
       for(let i=1; i < 4; i++) {
         const x10star = document.createElement('div')
@@ -99,14 +97,16 @@ document.addEventListener("DOMContentLoaded", evt => {
                         const signObjLi = document.createElement('li')
 
                         signObjLi.innerText = signObj.description
+                        signObjLi.dataset.id = signObj.id
+                        const deleteButton = document.createElement("button")
+                        deleteButton.textContent = "Delete"
+                        deleteButton.classList.add("delete-button")
+                        signObjLi.append(deleteButton)
+
                         console.log(signObjLi)
                         favList.append(signObjLi)
                     })
-
-
             }))
-
-
 
         menuStars.append(favCard)
     }
