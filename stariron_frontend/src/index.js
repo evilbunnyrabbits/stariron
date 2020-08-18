@@ -8,13 +8,24 @@ const cardinalityUrl = proxyurl + url + "cardinalities"
 const signObjectUrl = "http://127.0.0.1:3000/sign_object/"
 const favoritesUrl = "http://127.0.0.1:3000/favorites/"
 const usersUrl = "http://127.0.0.1:3000/users/"
-let userObj = {}
 let w = window.innerWidth - 20;
 let h = window.innerHeight - 20;
 const menuStars = document.getElementById("menu-stars")
 
 
+fetch(usersUrl + 1)
+    .then(res => res.json())
+    .then(user => {
+        console.log(user.name)
+        console.log(user.birthday)
+    })
+
+
+
+
 document.addEventListener("DOMContentLoaded", evt => {
+
+
 
     const getMainStars = () => {
       for(let i=1; i < 4; i++) {
@@ -59,38 +70,27 @@ document.addEventListener("DOMContentLoaded", evt => {
     const clickHandler = () => {
       document.addEventListener("click", e => {
           if (e.target.id === "1"){
-            menuStars.innerHTML = ""
-            formCard.append(backBtn)
-            menuStars.append(formCard)
-            form.reset()
+              menuStars.innerHTML = ""
+              formCard.append(backBtn)
+              menuStars.append(formCard)
+              form.reset()
           } else if(e.target.id === "form-back-btn"){
-            menuStars.innerHTML = ""
-            getMainStars()
+              menuStars.innerHTML = ""
+              getMainStars()
           } else if(e.target.id === "sign-back-btn"){
-            menuStars.innerHTML = ""
-            formCard.append(backBtn)
-            menuStars.append(formCard)
+              menuStars.innerHTML = ""
+              formCard.append(backBtn)
+              menuStars.append(formCard)
           } else if(e.target.id === "2"){
-            menuStars.innerHTML = ""
-            signCard.append(backBtn)
-            menuStars.append(signCard)
+              menuStars.innerHTML = ""
+              signCard.append(backBtn)
+              menuStars.append(signCard)
           } else if(e.target.id === "3"){
-            console.log("I am div 3")
+              menuStars.innerHTML = ""
+              console.log("I am div 3")
           } 
       })
     }
-
-
-
-    fetch(usersUrl + 1)
-            .then(res => res.json())
-            .then(user => {
-                userObj.name = user.name
-                userObj.birthday = user.birthday
-            })
-
-
-
 
 
     const form = document.createElement('form')
@@ -101,13 +101,13 @@ document.addEventListener("DOMContentLoaded", evt => {
     <h2 class="header-two">Welcome</h2>
     <label>What is your name?</label>
     <br>
-    <input type="text" name="name" placeholder="name" value="${userObj.name}">
+    <input type="text" name="name" placeholder="name" value="">
     </br>
     </br>
     <label>Date of Birth</label>
     <br>
     <input type="date" id="birth-date" name="birth-date"
-       value="${userObj.birthday}"
+       value=""
        min="1900-01-01" max="2022-12-31">
        <br>
        </br>
@@ -195,6 +195,7 @@ document.addEventListener("DOMContentLoaded", evt => {
             return sign
           }
     }
+
     const getSunSign = () => {
       fetch(sunUrl)
       .then(resp => resp.json())
