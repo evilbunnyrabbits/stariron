@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", evt => {
           if (e.target.id === "1"){
               menuStars.innerHTML = ""
               getUser()
-              formCard.append(backBtn)
+              formCard.append(mainButton)
               menuStars.append(formCard)
               form.reset()
           } else if(e.target.id === "form-back-btn"){
@@ -73,12 +73,18 @@ document.addEventListener("DOMContentLoaded", evt => {
               getMainStars()
           } else if(e.target.id === "sign-back-btn"){
               menuStars.innerHTML = ""
-              formCard.append(backBtn)
+              formCard.append(mainButton)
               menuStars.append(formCard)
           } else if(e.target.id === "2"){
               menuStars.innerHTML = ""
-              signCard.append(backBtn)
+              signCard.append(mainButton)
               menuStars.append(signCard)
+          }  else if(e.target.matches(".fav-btn")){
+            const button = e.target 
+            const parent = button.parentElement
+            let id = button.dataset.id
+            addToFavorite(parent, id)
+            //add obj to favorite 
           } else if(e.target.id === "3"){
               menuStars.innerHTML = ""
               renderFavCard(menuStars)
@@ -86,6 +92,26 @@ document.addEventListener("DOMContentLoaded", evt => {
               const button = e.target
               deleteFav(button)
           }
+      })
+    }
+
+    const addToFavorite = (signObj, id) => { 
+      updateSignObj(signObj)
+      fetch(favoritesUrl)
+      .then(resp => resp.json())
+      .then()
+      
+    }
+
+    const updateSignObj = (signObj) => {
+      let description = signObj.innerHTML
+      fetch(signObjectUrl, {
+        method: "POST", 
+        headers: {
+          "content-type": "application/json", 
+          accepts: "application/json"
+        }, 
+        body: JSON.stringify({description: description})
       })
     }
 
@@ -121,14 +147,9 @@ document.addEventListener("DOMContentLoaded", evt => {
                         favList.append(signObjDiv)
                     })
            }))
-        const mainButton = document.createElement("button")
-        mainButton.id = "form-back-btn"
-        mainButton.className = "btn btn-white btn-animated"
-        mainButton.innerText = "Main"
         favCard.append(mainButton)
 
         menuStars.append(favCard)
-
     }
 
     const getUser = () => {
@@ -158,10 +179,10 @@ document.addEventListener("DOMContentLoaded", evt => {
     submitHandler(form, user)
     }
 
-    let backBtn = document.createElement('button')
-      backBtn.setAttribute('id', 'form-back-btn')
-      backBtn.classList = "btn btn-white btn-animated"
-      backBtn.innerText = "main"
+    let mainButton = document.createElement('button')
+      mainButton.setAttribute('id', 'form-back-btn')
+      mainButton.classList = "btn btn-white btn-animated"
+      mainButton.innerText = "main"
 
     let backToForm = document.createElement('button')
       backToForm.setAttribute('id', 'sign-back-btn')
@@ -169,12 +190,11 @@ document.addEventListener("DOMContentLoaded", evt => {
       backToForm.innerText = "back to form"
 
     let favBtn = document.createElement('button')
-      favBtn.setAttribute('id', 'fav-button')
-      favBtn.classList = "btn btn-white btn-animated"
+      favBtn.classList = "fav-btn", "btn btn-white btn-animated"
       favBtn.innerHTML = `&#x2665;`
 
 
-    formCard.append(form, backBtn)
+    formCard.append(form, mainButton)
 
     const submitHandler = (info, user) => {
         form.addEventListener('submit', e => {
@@ -206,7 +226,7 @@ document.addEventListener("DOMContentLoaded", evt => {
             signCard.innerHTML = `
             <h2 id="sign-name">${sign}</h2>
             `
-            getSunSign()
+            getSunSign(user)
             // form.reset()
         })
     }
@@ -257,20 +277,25 @@ document.addEventListener("DOMContentLoaded", evt => {
           }
     }
 
-    const getSunSign = () => {
+    const getSunSign = (user) => {
       fetch(sunUrl)
       .then(resp => resp.json())
-      .then(signs => renderSigns(signs))
+      .then(signs => renderSigns(signs, user))
     }
 
-    function renderSigns(signs){
+    function renderSigns(signs, user){
       let sign = signCard.querySelector('#sign-name').innerText
+      let br = document.createElement('br')
+      favBtn.dataset.id = user.id
+
       if (sign != null || undefined) {
        let p = document.createElement('p')
        signObj = signs.filter(name => name.name === sign)
        p.innerText = `${signObj[0].mental_traits}`
 
-       signCard.append(p, backBtn, backToForm)
+       p.append(br, favBtn)
+        
+       signCard.append(p, mainButton, backToForm)
        menuStars.append(signCard)
       // signs.forEach(signObj => renderSign(signObj))
 

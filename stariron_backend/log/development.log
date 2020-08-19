@@ -42273,3 +42273,183 @@ Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 852)
 Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1630)
 
 
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1189243014167491080)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1189243014167491080)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1189243014167491080)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1189243014167491080)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1189243014167491080)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1189243014167491080)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 14:59:48 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 23ms (Views: 0.6ms | ActiveRecord: 7.9ms | Allocations: 6054)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 15:00:00 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (1.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 2.5ms | ActiveRecord: 2.8ms | Allocations: 2151)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 15:00:05 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 755)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 15:00:08 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Shane ", "birthday"=>"1986-01-17", "id"=>"1", "user"=>{"name"=>"Shane ", "birthday"=>"1986-01-17"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1206)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 15:00:08 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Shane ", "birthday"=>"1986-01-17", "id"=>"1", "user"=>{"name"=>"Shane ", "birthday"=>"1986-01-17"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 991)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 15:01:18 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (1.0ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.0ms | Allocations: 821)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 15:01:20 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 739)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 15:08:55 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 839)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 15:08:57 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Shane ", "birthday"=>"1986-01-17", "id"=>"1", "user"=>{"name"=>"Shane ", "birthday"=>"1986-01-17"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1007)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 15:11:07 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 3.9ms | Allocations: 741)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 15:11:09 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Shane ", "birthday"=>"1986-01-17", "id"=>"1", "user"=>{"name"=>"Shane ", "birthday"=>"1986-01-17"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 991)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 15:16:29 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (26.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 26.3ms | Allocations: 741)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 15:16:31 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Shane ", "birthday"=>"1986-01-17", "id"=>"1", "user"=>{"name"=>"Shane ", "birthday"=>"1986-01-17"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 991)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 15:17:09 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (28.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 32ms (Views: 0.8ms | ActiveRecord: 28.2ms | Allocations: 741)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 15:17:11 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Shane ", "birthday"=>"1986-01-17", "id"=>"1", "user"=>{"name"=>"Shane ", "birthday"=>"1986-01-17"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 989)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 15:26:42 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 3.0ms | Allocations: 838)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 15:26:44 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Shane ", "birthday"=>"1986-01-17", "id"=>"1", "user"=>{"name"=>"Shane ", "birthday"=>"1986-01-17"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 991)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 15:26:46 -0400
+Started POST "/sign_object/" for 127.0.0.1 at 2020-08-19 15:26:46 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 840)
+
+
+Processing by SignObjectController#create as */*
+  Parameters: {"description"=>"Capricorns are ambitious, determined, patient, mature, powerful, achiever, mysterious (disappearing), reserved, and detached, cautious, hot-tempered generous hard workers with a pair of penetrating eyes, They are usually very ambitious and enjoy responsibility, They are self-disciplined and respect authority, They are career-oriented, with a remarkable capacity for endurance and patience, They possess a tough exterior to protect others from hurting them, Inside the mysterious Capricorn is a charming and passionate human,They also possess a remarkable sense of humour<br><button class=\"fav-btn\" data-id=\"1\">♥</button>", "sign_object"=>{"description"=>"Capricorns are ambitious, determined, patient, mature, powerful, achiever, mysterious (disappearing), reserved, and detached, cautious, hot-tempered generous hard workers with a pair of penetrating eyes, They are usually very ambitious and enjoy responsibility, They are self-disciplined and respect authority, They are career-oriented, with a remarkable capacity for endurance and patience, They possess a tough exterior to protect others from hurting them, Inside the mysterious Capricorn is a charming and passionate human,They also possess a remarkable sense of humour<br><button class=\"fav-btn\" data-id=\"1\">♥</button>"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[36mSignObject Create (6.6ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "Capricorns are ambitious, determined, patient, mature, powerful, achiever, mysterious (disappearing), reserved, and detached, cautious, hot-tempered generous hard workers with a pair of penetrating eyes, They are usually very ambitious and enjoy responsibility, They are self-disciplined and respect authority, They are career-oriented, with a remarkable capacity for endurance and patience, They possess a tough exterior to protect others from hurting them, Inside the mysterious Capricorn is a charming and passionate human,They also possess a remarkable sense of humour<br><button class=\"fav-btn\" data-id=\"1\">♥</button>"], ["created_at", "2020-08-19 19:26:46.186006"], ["updated_at", "2020-08-19 19:26:46.186006"]]
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 17.5ms | Allocations: 5056)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 15:26:49 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 850)
+
+
