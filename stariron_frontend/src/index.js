@@ -79,6 +79,9 @@ document.addEventListener("DOMContentLoaded", evt => {
               menuStars.innerHTML = ""
               signCard.append(backBtn)
               menuStars.append(signCard)
+          } else if(e.target.id === "fav-button"){
+            //add obj to favorite 
+           e.disabled = true
           } else if(e.target.id === "3"){
               menuStars.innerHTML = ""
               renderFavCard(menuStars)
@@ -87,6 +90,10 @@ document.addEventListener("DOMContentLoaded", evt => {
               deleteFav(button)
           }
       })
+    }
+
+    const addToFavorite = () => { 
+
     }
 
 
@@ -160,7 +167,7 @@ document.addEventListener("DOMContentLoaded", evt => {
       backToForm.innerText = "back to form"
 
     let favBtn = document.createElement('button')
-      favBtn.setAttribute('id', 'fav-button')
+      favBtn.className = "fav-btn"
       favBtn.classList = "btn btn-white btn-animated"
       favBtn.innerHTML = `&#x2665;`
 
@@ -261,6 +268,7 @@ document.addEventListener("DOMContentLoaded", evt => {
        signObj = signs.filter(name => name.name === sign)
        p.innerText = `${signObj[0].mental_traits}`
 
+       p.append(favBtn)
        signCard.append(p, backBtn, backToForm)
        menuStars.append(signCard)
       // signs.forEach(signObj => renderSign(signObj))
