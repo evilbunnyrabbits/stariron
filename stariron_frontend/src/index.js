@@ -92,7 +92,10 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     const renderFavCard = (menuStars) => {
         const favCard = document.createElement('div')
-        const favList = document.createElement("ul")
+        favCard.innerHTML = `<h3>My Favorite Signs</h3>`
+        const favList = document.createElement("div")
+        favList.classList.add("fav-container")
+
         favCard.setAttribute("class", "card")
         favCard.append(favList)
 
@@ -105,15 +108,15 @@ document.addEventListener("DOMContentLoaded", evt => {
                     .then(res => res.json())
                     .then(signObj => {
 
-                        const signObjLi = document.createElement('li')
-
-                        signObjLi.innerText = signObj.description
-                        signObjLi.dataset.id = signObj.id
+                        const signObjDiv = document.createElement('div')
+                        signObjDiv.classList.add("fav-object-div")
+                        signObjDiv.innerHTML = `${signObj.description}<br />`
+                        signObjDiv.dataset.id = signObj.id
                         const deleteButton = document.createElement("button")
                         deleteButton.textContent = "Delete"
                         deleteButton.classList.add("delete-fav-button")
-                        signObjLi.append(deleteButton)
-                        favList.append(signObjLi)
+                        signObjDiv.append(deleteButton)
+                        favList.append(signObjDiv)
                     })
             }))
 
