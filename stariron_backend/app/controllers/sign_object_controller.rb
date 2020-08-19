@@ -31,7 +31,7 @@ class SignObjectController < ApplicationController
   private
 
   def sign_object_params
-    params.require(:sign_object).permit(:description)
+    params.require(:sign_object).permit(:sign, :content)
   end
 
 end

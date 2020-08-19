@@ -80,11 +80,9 @@ document.addEventListener("DOMContentLoaded", evt => {
               signCard.append(mainButton)
               menuStars.append(signCard)
           }  else if(e.target.matches(".fav-btn")){
-            const button = e.target 
-            const parent = button.parentElement
-            let id = button.dataset.id
-            addToFavorite(parent, id)
-            //add obj to favorite 
+            const button = e.target
+            addToFavorite(button)
+
           } else if(e.target.id === "3"){
               menuStars.innerHTML = ""
               renderFavCard(menuStars)
@@ -95,13 +93,48 @@ document.addEventListener("DOMContentLoaded", evt => {
       })
     }
 
-    const addToFavorite = (signObj, id) => { 
-      updateSignObj(signObj)
-      fetch(favoritesUrl)
-      .then(resp => resp.json())
-      .then()
-      
+    const addToFavorite = (button) => {
+        const content = button.parentElement.textContent
+        const sign = document.getElementById("sign-name").textContent
+
+        const data = {
+            sign: sign,
+            content: content
+        }
+
+        const packet = {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
+            body: JSON.stringify(data)
+        }
+        fetch(signObjectUrl, packet)
+            .then(res => res.json())
+            .then(sign_object => {
+
+                const data = {
+                    user_id: 1,
+                    sign_object_id: sign_object.id
+                }
+
+                const packet = {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                        "accept": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                }
+
+                fetch(favoritesUrl, packet)
+                    .then(res => res.json())
+
+            })
     }
+
+
 
     const updateSignObj = (signObj) => {
       let description = signObj.innerHTML
