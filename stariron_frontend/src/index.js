@@ -290,6 +290,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 
       if (sign != null || undefined) {
        let p = document.createElement('p')
+       favBtn.dataset.id = user.id
        signObj = signs.filter(name => name.name === sign)
        p.innerText = `${signObj[0].mental_traits}`
 
