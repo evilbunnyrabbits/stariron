@@ -6,18 +6,18 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    favorite = Favorite.find_by(params[:id])
+    favorite = Favorite.find(params[:id])
     render json: favorite
   end
 
   def update
-    favorite = Favorite.find_by(params[:id])
+    favorite = Favorite.find(params[:id])
     favorite.update!(favorite_params)
     render json: favorite
   end
 
   def destroy
-    favorite = Favorite.find_by(params[:id])
+    favorite = Favorite.find(params[:id])
     favorite.destroy!
     render json: {}
   end
