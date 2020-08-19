@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 
                         const signObjDiv = document.createElement('div')
                         signObjDiv.classList.add("fav-object-div")
-                        signObjDiv.innerHTML = `${signObj.description}<br />`
+                        signObjDiv.innerHTML = `<b>${signObj.sign}</b><br />${signObj.content}`
                         signObjDiv.dataset.id = signObj.id
                         const deleteButton = document.createElement("button")
                         deleteButton.textContent = "Delete"
