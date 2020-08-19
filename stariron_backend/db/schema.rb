@@ -23,7 +23,8 @@ ActiveRecord::Schema.define(version: 2020_08_13_214838) do
   end
 
   create_table "sign_objects", force: :cascade do |t|
-    t.string "description"
+    t.string "sign"
+    t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
