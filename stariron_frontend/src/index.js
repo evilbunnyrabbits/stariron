@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     const getUser = () => {
       fetch(usersUrl)
-      .then(resp => resp.json())
-      .then(data => renderUser(data))
+        .then(resp => resp.json())
+        .then(data => renderUser(data))
     }
 
 
@@ -149,14 +149,19 @@ document.addEventListener("DOMContentLoaded", evt => {
     }
 
     let backBtn = document.createElement('button')
-    backBtn.setAttribute('id', 'form-back-btn')
-    backBtn.classList = "btn btn-white btn-animated"
-    backBtn.innerText = "main"
+      backBtn.setAttribute('id', 'form-back-btn')
+      backBtn.classList = "btn btn-white btn-animated"
+      backBtn.innerText = "main"
 
     let backToForm = document.createElement('button')
-    backToForm.setAttribute('id', 'sign-back-btn')
-    backToForm.classList = "btn btn-white btn-animated"
-    backToForm.innerText = "back to form"
+      backToForm.setAttribute('id', 'sign-back-btn')
+      backToForm.classList = "btn btn-white btn-animated"
+      backToForm.innerText = "back to form"
+
+    let favBtn = document.createElement('button')
+      favBtn.setAttribute('id', 'fav-button')
+      favBtn.classList = "btn btn-white btn-animated"
+      favBtn.innerHTML = `&#x2665;`
 
 
     formCard.append(form, backBtn)
