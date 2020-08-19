@@ -82,7 +82,10 @@ document.addEventListener("DOMContentLoaded", evt => {
           } else if(e.target.id === "3"){
               menuStars.innerHTML = ""
               renderFavCard(menuStars)
-          } 
+          } else if(e.target.matches("button.delete-fav-button")) {
+              const button = e.target
+              deleteFav(button)
+          }
       })
     }
 
@@ -108,10 +111,8 @@ document.addEventListener("DOMContentLoaded", evt => {
                         signObjLi.dataset.id = signObj.id
                         const deleteButton = document.createElement("button")
                         deleteButton.textContent = "Delete"
-                        deleteButton.classList.add("delete-button")
+                        deleteButton.classList.add("delete-fav-button")
                         signObjLi.append(deleteButton)
-
-                        console.log(signObjLi)
                         favList.append(signObjLi)
                     })
             }))
@@ -161,15 +162,13 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     formCard.append(form, backBtn)
 
-    
     const submitHandler = (info, user) => {
         form.addEventListener('submit', e => {
             e.preventDefault()
-            console.log(info)
+
             const birthDate = info.querySelector("#birth-date").value 
             const name = info.name.value 
-            console.log(name)
-            console.log(birthDate)
+
 
           fetch(usersUrl, {
             method: 'PATCH', 
@@ -263,7 +262,21 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     }}
     
-    // function renderSign(signObj) {  
+    const deleteFav = (button) => {
+        const favId = button.parentElement.dataset.id
+        const favParentUl = button.parentElement.parentElement
+        console.log(favParentUl)
+
+        const packet = {
+            method: "DELETE"
+        }
+        fetch(favoritesUrl + favId, packet)
+            .then(res => res.json())
+    }
+
+
+
+    // function renderSign(signObj) {
     // }
 
     
