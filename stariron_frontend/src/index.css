@@ -1,12 +1,7 @@
 
 body {
     background-color: black;
-<<<<<<< HEAD
     font-family: 'Source Sans Pro', sans-serif;
-=======
-    font-family: "Source Sans Pro", sans-serif;
-
->>>>>>> f472b39c719c38631bcb070e9cff5dbf1ae4b28d
 }
 
 .star2px{
@@ -71,14 +66,11 @@ body {
     border-radius: 15px;
     padding: 5%;
     height: fit-content;
-<<<<<<< HEAD
-=======
     animation: fadeIn ease 1s;
     -webkit-animation: fadeIn ease 1s;
     -moz-animation: fadeIn ease 1s;
     -o-animation: fadeIn ease 1s;
     -ms-animation: fadeIn ease 1s;
->>>>>>> f472b39c719c38631bcb070e9cff5dbf1ae4b28d
 }
 
 .form{
@@ -99,11 +91,8 @@ body {
 
 .fav-object-div {
     text-align: center;
-<<<<<<< HEAD
     margin: 10px;
     background: white;
-}
-=======
     margin: 15px;
     padding: 15px;
     background: white;
@@ -153,9 +142,9 @@ h3 {
 
 @-ms-keyframes fadeIn {
     0% {
-        opacity:0;
+        opacity: 0;
     }
     100% {
-        opacity:1;
+        opacity: 1;
     }
->>>>>>> f472b39c719c38631bcb070e9cff5dbf1ae4b28d
+}

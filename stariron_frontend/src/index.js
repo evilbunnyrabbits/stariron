@@ -91,14 +91,10 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     const renderFavCard = (menuStars) => {
         const favCard = document.createElement('div')
-<<<<<<< HEAD
-        favCard.innerHTML = `<h3>My Favorite Signs</h3>`
-=======
         favCard.innerHTML = `
             <h3>My Favorite Signs</h3>
             <br />
             `
->>>>>>> f472b39c719c38631bcb070e9cff5dbf1ae4b28d
         const favList = document.createElement("div")
         favList.classList.add("fav-container")
 
@@ -116,13 +112,8 @@ document.addEventListener("DOMContentLoaded", evt => {
 
                         const signObjDiv = document.createElement('div')
                         signObjDiv.classList.add("fav-object-div")
-<<<<<<< HEAD
-                        signObjDiv.innerHTML = `${signObj.description}<br />`
-                        signObjDiv.dataset.id = signObj.id
-=======
                         signObjDiv.innerHTML = `<b>${signObj.sign}</b><br />${signObj.content}<br /><br />`
                         signObjDiv.dataset.id = fav.id
->>>>>>> f472b39c719c38631bcb070e9cff5dbf1ae4b28d
                         const deleteButton = document.createElement("button")
                         deleteButton.textContent = "Delete"
                         deleteButton.classList.add("delete-fav-button")
