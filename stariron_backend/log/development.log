@@ -36030,3 +36030,1806 @@ Migrating to CreateFavorites (20200813214838)
   [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
   [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 10], ["created_at", "2020-08-19 14:12:32.067858"], ["updated_at", "2020-08-19 14:12:32.067858"]]
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:15:56 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (2.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 5.5ms | Allocations: 6656)
+
+
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:15:56 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:15:56 -0400
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 10:15:56 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:15:56 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:15:56 -0400
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 6730)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 1657)
+
+
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (2.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 2.0ms | Allocations: 2421)
+
+
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 3405)
+
+
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 2694)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:15:56 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 714)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:15:58 -0400
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 10:15:58 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:15:58 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:15:58 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 890)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 1685)
+
+
+  [1m[36mSignObject Load (3.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 3.5ms | Allocations: 2656)
+
+
+  [1m[36mSignObject Load (4.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 4.2ms | Allocations: 2482)
+
+
+Started DELETE "/favorites/7" for 127.0.0.1 at 2020-08-19 10:16:04 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 2663)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1741)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1186)
+
+
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"6"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1010)
+
+
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 2697)
+
+
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 2561)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+  [1m[36mSignObject Load (1.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 4310)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (1.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1187)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 2254)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 714)
+
+
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:16:10 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 714)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1757)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+Processing by SignObjectController#show as */*
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mSignObject Load (2.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 2651)
+
+
+  Parameters: {"id"=>"5"}
+  Parameters: {"id"=>"4"}
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2758)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2209)
+
+
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+  [1m[36mSignObject Load (0.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.3ms | Allocations: 2241)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 2465)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mSignObject Load (1.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (12.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 1613)
+
+
+  [1m[36mSignObject Load (1.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 12.9ms | Allocations: 1518)
+
+
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 2013)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 10:17:30 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 714)
+
+
+Started DELETE "/favorites/6" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"6"}
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 2338)
+
+
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.6ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 1632)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+  [1m[36mSignObject Load (3.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 2802)
+
+
+  [1m[36mSignObject Load (2.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 1956)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (5.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+  Parameters: {"id"=>"5"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 5.4ms | Allocations: 5152)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mSignObject Load (4.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSignObject Load (3.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 2368)
+
+
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 3243)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 4.4ms | Allocations: 4896)
+
+
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 714)
+
+
+  [1m[35m (41.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 48ms (Views: 0.1ms | ActiveRecord: 44.2ms | Allocations: 17820)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 10:17:32 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 714)
+
+
+Started DELETE "/favorites/6" for 127.0.0.1 at 2020-08-19 10:17:43 -0400
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:17:43 -0400
+Processing by FavoritesController#index as */*
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 1732)
+
+
+  [1m[36mFavorite Load (1.0ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms | Allocations: 2420)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Favorite with 'id'=6):
+  
+app/controllers/favorites_controller.rb:20:in `destroy'
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:17:43 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:17:43 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:17:43 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:17:43 -0400
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:17:43 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1095)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1061)
+
+
+  [1m[36mSignObject Load (2.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 2027)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:17:43 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:17:43 -0400
+  [1m[36mSignObject Load (4.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 4.5ms | Allocations: 3190)
+
+
+  [1m[36mSignObject Load (5.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 5.2ms | Allocations: 3813)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 841)
+
+
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1592)
+
+
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:17:44 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 714)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:17:48 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1638)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:17:48 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:17:48 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:17:48 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:17:48 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:17:48 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (0.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2341)
+
+
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1602)
+
+
+  [1m[36mSignObject Load (1.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 1995)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:17:48 -0400
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:17:48 -0400
+  [1m[36mSignObject Load (2.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 3072)
+
+
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 3443)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 833)
+
+
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1605)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:17:48 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 714)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:18:38 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1637)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:18:38 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:18:38 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:18:38 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:18:38 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:18:38 -0400
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 760)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (1.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:18:38 -0400
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"4"}
+  [1m[36mSignObject Load (1.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2349)
+
+
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 1954)
+
+
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 2232)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2906)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:18:38 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (3.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 1610)
+
+
+  [1m[36mSignObject Load (0.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1557)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:18:39 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 719)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:18:55 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1636)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:18:55 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:18:55 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:18:55 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:18:55 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:18:55 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 975)
+
+
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 2172)
+
+
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1830)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:18:55 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:18:55 -0400
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1285)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (1.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 1539)
+
+
+  [1m[36mSignObject Load (4.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 4.7ms | Allocations: 3366)
+
+
+  [1m[36mSignObject Load (3.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 2470)
+
+
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:18:55 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 727)
+
+
+Started DELETE "/favorites/4" for 127.0.0.1 at 2020-08-19 10:18:56 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (623.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 628ms (Views: 0.2ms | ActiveRecord: 624.6ms | Allocations: 2502)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:19:26 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1534)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:19:26 -0400
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:19:26 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:19:26 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:19:26 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:19:26 -0400
+  [1m[36mSignObject Load (1.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (0.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 1109)
+
+
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"8"}
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2021)
+
+
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:19:26 -0400
+  Parameters: {"id"=>"2"}
+  [1m[36mSignObject Load (0.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (1.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 2340)
+
+
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1843)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 2828)
+
+
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 714)
+
+
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:19:26 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 714)
+
+
+Started DELETE "/favorites/5" for 127.0.0.1 at 2020-08-19 10:19:27 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 6.3ms | Allocations: 2517)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:20:55 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1433)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:20:55 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:20:55 -0400
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:20:55 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:20:55 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:20:55 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1594)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2494)
+
+
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1533)
+
+
+  [1m[36mSignObject Load (2.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 1933)
+
+
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 2.2ms | Allocations: 2630)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:20:55 -0400
+Started DELETE "/favorites/3" for 127.0.0.1 at 2020-08-19 10:20:56 -0400
+Processing by SignObjectController#show as */*
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"10"}
+  Parameters: {"id"=>"3"}
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 792)
+
+
+  [1m[36mFavorite Load (1.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (142.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 147ms (Views: 0.1ms | ActiveRecord: 143.8ms | Allocations: 3376)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:22:01 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1330)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:22:01 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:22:01 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:22:01 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:22:01 -0400
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1087)
+
+
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:22:01 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (1.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mSignObject Load (2.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 1417)
+
+
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (1.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 2620)
+
+
+  Parameters: {"id"=>"9"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 2879)
+
+
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1323)
+
+
+Started DELETE "/favorites/9" for 127.0.0.1 at 2020-08-19 10:22:02 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.8ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (242.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 247ms (Views: 0.2ms | ActiveRecord: 243.6ms | Allocations: 2498)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:23:03 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1231)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:23:03 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:23:03 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:23:03 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:23:03 -0400
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Parameters: {"id"=>"2"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1381)
+
+
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2007)
+
+
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2107)
+
+
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 1758)
+
+
+Started DELETE "/favorites/2" for 127.0.0.1 at 2020-08-19 10:23:04 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (2051.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 5822ms (Views: 0.2ms | ActiveRecord: 2052.1ms | Allocations: 2513)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:23:48 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 1125)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:23:48 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:23:48 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:23:48 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1569)
+
+
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1833)
+
+
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1322)
+
+
+Started DELETE "/favorites/1" for 127.0.0.1 at 2020-08-19 10:23:49 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (71.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 72.3ms | Allocations: 2498)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:23:56 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1023)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:23:59 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:23:59 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 923)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1542)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:26:04 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1023)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:26:06 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:26:06 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1397)
+
+
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 837)
+
+
+Started DELETE "/favorites/8" for 127.0.0.1 at 2020-08-19 10:26:11 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (89.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 2471ms (Views: 0.1ms | ActiveRecord: 89.8ms | Allocations: 2504)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:26:14 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 921)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:26:14 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 714)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (27.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stariron_backend_development"[0m
+  [1m[35m (22.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stariron_backend_test"[0m
+  [1m[35m (73.6ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (228.1ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1189243014167491080)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200813214447)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "birthday" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200813214447"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSignObjects (20200813214559)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "sign_objects" ("id" bigserial primary key, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200813214559"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFavorites (20200813214838)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" bigserial primary key, "user_id" integer, "sign_object_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200813214838"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-19 14:26:34.302821"], ["updated_at", "2020-08-19 14:26:34.302821"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1189243014167491080)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Test_User"], ["birthday", "2015-12-08"], ["created_at", "2020-08-19 14:26:45.636741"], ["updated_at", "2020-08-19 14:26:45.636741"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.4ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My First Favorite Sign"], ["created_at", "2020-08-19 14:26:45.643057"], ["updated_at", "2020-08-19 14:26:45.643057"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My Second Favorite Sign"], ["created_at", "2020-08-19 14:26:45.655909"], ["updated_at", "2020-08-19 14:26:45.655909"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My Third Favorite Sign"], ["created_at", "2020-08-19 14:26:45.659952"], ["updated_at", "2020-08-19 14:26:45.659952"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.1ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My fourth Favorite Sign"], ["created_at", "2020-08-19 14:26:45.675722"], ["updated_at", "2020-08-19 14:26:45.675722"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My fifth Favorite Sign"], ["created_at", "2020-08-19 14:26:45.678332"], ["updated_at", "2020-08-19 14:26:45.678332"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.1ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My sixth Favorite Sign"], ["created_at", "2020-08-19 14:26:45.680817"], ["updated_at", "2020-08-19 14:26:45.680817"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My seventh Favorite Sign"], ["created_at", "2020-08-19 14:26:45.682975"], ["updated_at", "2020-08-19 14:26:45.682975"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My eighth Favorite Sign"], ["created_at", "2020-08-19 14:26:45.685151"], ["updated_at", "2020-08-19 14:26:45.685151"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.1ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My ninth Favorite Sign"], ["created_at", "2020-08-19 14:26:45.687299"], ["updated_at", "2020-08-19 14:26:45.687299"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.1ms)[0m  [1m[32mINSERT INTO "sign_objects" ("description", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["description", "My tenth Favorite Sign"], ["created_at", "2020-08-19 14:26:45.689483"], ["updated_at", "2020-08-19 14:26:45.689483"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 1], ["created_at", "2020-08-19 14:26:45.700495"], ["updated_at", "2020-08-19 14:26:45.700495"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 2], ["created_at", "2020-08-19 14:26:45.704877"], ["updated_at", "2020-08-19 14:26:45.704877"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 3], ["created_at", "2020-08-19 14:26:45.708963"], ["updated_at", "2020-08-19 14:26:45.708963"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.1ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 4], ["created_at", "2020-08-19 14:26:45.712930"], ["updated_at", "2020-08-19 14:26:45.712930"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 5], ["created_at", "2020-08-19 14:26:45.716903"], ["updated_at", "2020-08-19 14:26:45.716903"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.1ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 6], ["created_at", "2020-08-19 14:26:45.720914"], ["updated_at", "2020-08-19 14:26:45.720914"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 7], ["created_at", "2020-08-19 14:26:45.724839"], ["updated_at", "2020-08-19 14:26:45.724839"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 8], ["created_at", "2020-08-19 14:26:45.728904"], ["updated_at", "2020-08-19 14:26:45.728904"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 9], ["created_at", "2020-08-19 14:26:45.740332"], ["updated_at", "2020-08-19 14:26:45.740332"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.1ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 10], ["created_at", "2020-08-19 14:26:45.744476"], ["updated_at", "2020-08-19 14:26:45.744476"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 3.6ms | Allocations: 6656)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 8880)
+
+
+  Parameters: {"id"=>"2"}
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 2180)
+
+
+  [1m[36mSignObject Load (1.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"7"}
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 6580)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+  [1m[36mSignObject Load (2.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mSignObject Load (2.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 3085)
+
+
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.4ms | Allocations: 5163)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.8ms | Allocations: 6022)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+  [1m[36mSignObject Load (1.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 1953)
+
+
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 1546)
+
+
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1046)
+
+
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:26:53 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 724)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1859)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSignObject Load (1.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 1653)
+
+
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1740)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 3414)
+
+
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1689)
+
+
+  [1m[36mSignObject Load (1.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2453)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mSignObject Load (2.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 3584)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 4400)
+
+
+  [1m[36mSignObject Load (4.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 4.9ms | Allocations: 2401)
+
+
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (0.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 714)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 10:31:32 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 714)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1857)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2481)
+
+
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 2237)
+
+
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2396)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+  [1m[36mSignObject Load (2.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 2096)
+
+
+  [1m[36mSignObject Load (2.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 2696)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:31:56 -0400
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  Parameters: {"id"=>"7"}
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1267)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (1.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 2503)
+
+
+  [1m[36mSignObject Load (1.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 1816)
+
+
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 3124)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 10:31:57 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 717)
+
+
+Started DELETE "/favorites/6" for 127.0.0.1 at 2020-08-19 10:31:58 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (696.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 700ms (Views: 0.1ms | ActiveRecord: 697.2ms | Allocations: 2663)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:32:44 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1741)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:32:45 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:32:45 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:32:45 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:32:45 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:32:45 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (0.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1279)
+
+
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1586)
+
+
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.9ms | Allocations: 2482)
+
+
+  Parameters: {"id"=>"4"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 10:32:45 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:32:45 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 10:32:45 -0400
+  [1m[36mSignObject Load (3.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 1744)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (5.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSignObject Load (1.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 1963)
+
+
+  Parameters: {"id"=>"9"}
+  [1m[36mSignObject Load (1.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 5.2ms | Allocations: 4486)
+
+
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 1.2ms | Allocations: 1398)
+
+
+  [1m[36mSignObject Load (5.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 5.3ms | Allocations: 1787)
+
+
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 10:32:45 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 716)
+
+
+Started DELETE "/favorites/7" for 127.0.0.1 at 2020-08-19 10:32:51 -0400
+Started DELETE "/favorites/9" for 127.0.0.1 at 2020-08-19 10:32:52 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"7"}
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.4ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 9]]
+  [1m[36mFavorite Destroy (0.8ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (1087.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 1094ms (Views: 0.2ms | ActiveRecord: 1089.3ms | Allocations: 4697)
+
+
+Started DELETE "/favorites/10" for 127.0.0.1 at 2020-08-19 10:32:53 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (1757.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (704.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2186ms (Views: 0.1ms | ActiveRecord: 1758.6ms | Allocations: 7906)
+
+
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 733ms (Views: 0.1ms | ActiveRecord: 705.1ms | Allocations: 3289)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:32:59 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1433)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:32:59 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:32:59 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:32:59 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:32:59 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:32:59 -0400
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"5"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2135)
+
+
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1611)
+
+
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1643)
+
+
+  [1m[36mSignObject Load (0.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2085)
+
+
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 3890)
+
+
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 10:33:00 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 714)
+
+
+Started DELETE "/favorites/4" for 127.0.0.1 at 2020-08-19 10:33:01 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.2ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (26.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 26.5ms | Allocations: 2498)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:33:04 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1182ms (Views: 1181.7ms | ActiveRecord: 0.5ms | Allocations: 1334)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:33:10 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:33:10 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:33:10 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:33:10 -0400
+Processing by SignObjectController#show as */*
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:33:10 -0400
+  Parameters: {"id"=>"1"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1794)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 1008)
+
+
+  [1m[36mSignObject Load (1.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (2.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 1593)
+
+
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 3028)
+
+
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 3511)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 10:33:22 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 4.5ms | Allocations: 4907)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 10:33:43 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "birthday" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "Ben Garlock"], ["birthday", "1983-05-02"], ["updated_at", "2020-08-19 14:33:43.707454"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[35m (492.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+Completed 200 OK in 498ms (Views: 0.5ms | ActiveRecord: 493.3ms | Allocations: 3386)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:33:54 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1330)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:33:54 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:33:54 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 10:33:54 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:33:54 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:33:54 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 927)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 2918)
+
+
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1806)
+
+
+  Parameters: {"id"=>"5"}
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 2351)
+
+
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 1109)
+
+
+Started DELETE "/favorites/5" for 127.0.0.1 at 2020-08-19 10:35:12 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.5ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 53ms (Views: 0.1ms | ActiveRecord: 41.2ms | Allocations: 2504)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 10:35:15 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1228)
+
+
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 10:35:15 -0400
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 10:35:15 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 10:35:15 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 10:35:15 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"8"}
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1996)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2072)
+
+
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1358)
+
+
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2279)
+
+

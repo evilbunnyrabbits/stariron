@@ -264,16 +264,13 @@ document.addEventListener("DOMContentLoaded", evt => {
     
     const deleteFav = (button) => {
         const favId = button.parentElement.dataset.id
-        const favParentUl = button.parentElement.parentElement
-        console.log(favParentUl)
-
         const packet = {
             method: "DELETE"
         }
         fetch(favoritesUrl + favId, packet)
             .then(res => res.json())
+            .then(button.parentElement.remove())
     }
-
 
 
     // function renderSign(signObj) {
