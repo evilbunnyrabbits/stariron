@@ -91,7 +91,10 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     const renderFavCard = (menuStars) => {
         const favCard = document.createElement('div')
-        favCard.innerHTML = `<h3>My Favorite Signs</h3>`
+        favCard.innerHTML = `
+            <h3>My Favorite Signs</h3>
+            <br />
+            `
         const favList = document.createElement("div")
         favList.classList.add("fav-container")
 
@@ -117,9 +120,15 @@ document.addEventListener("DOMContentLoaded", evt => {
                         signObjDiv.append(deleteButton)
                         favList.append(signObjDiv)
                     })
-            }))
+           }))
+        const mainButton = document.createElement("button")
+        mainButton.id = "form-back-btn"
+        mainButton.className = "btn btn-white btn-animated"
+        mainButton.innerText = "Main"
+        favCard.append(mainButton)
 
         menuStars.append(favCard)
+
     }
 
     const getUser = () => {
