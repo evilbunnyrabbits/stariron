@@ -13,6 +13,11 @@ body {
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
     position: absolute;
     z-index: 1;
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
 }
 
 .star5px{
@@ -23,6 +28,11 @@ body {
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(2,0,36,1) 52%);
     position: absolute;
     z-index: 1;
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+    -o-animation: fadeIn ease 2s;
+    -ms-animation: fadeIn ease 2s;
 }
 
 .star10px{
@@ -43,6 +53,11 @@ body {
     justify-content: center;
     top: 25%;
     left: 25%;
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+    -moz-animation: fadeIn ease 5s;
+    -o-animation: fadeIn ease 5s;
+    -ms-animation: fadeIn ease 5s;
 }
 
 .card{
@@ -52,6 +67,11 @@ body {
     border-radius: 15px;
     padding: 5%;
     height: fit-content;
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
 }
 
 .form{
@@ -72,6 +92,56 @@ body {
 
 .fav-object-div {
     text-align: center;
-    margin: 10px;
+    margin: 15px;
+    padding: 15px;
     background: white;
 }
+
+h3 {
+    text-align: center;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
