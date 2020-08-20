@@ -23,14 +23,24 @@ document.addEventListener("DOMContentLoaded", evt => {
     const getMainStars = () => {
       for(let i=1; i < 4; i++) {
         const x10star = document.createElement('div')
-        x10star.classList.add("star10px")
+        x10star.classList.add("star10px", "avatar")
         x10star.setAttribute('id', `${i}`)
         const randomLength = Math.floor(Math.random() * 150)
         const randomHeight = Math.floor(Math.random() * 150)
         x10star.setAttribute("style", `margin-left:${randomLength}px; margin-top: ${randomHeight}px`)
         menuStars.append(x10star)
     }
+    const mainStar1 = document.getElementById('1')
+    mainStar1.dataset.tooltip = "My Sign"
+    const mainStar2 = document.getElementById('2')
+    mainStar2.dataset.tooltip = "thinkingCat"
+    const mainStar3 = document.getElementById('3')
+    mainStar3.dataset.tooltip = "Favorite Collection"
+
     }
+
+    
+
 
     const generateStars = () => {
         const starContainer = document.getElementById("star-cluster")
@@ -59,7 +69,6 @@ document.addEventListener("DOMContentLoaded", evt => {
         }
 
     }
-
     const clickHandler = () => {
       document.addEventListener("click", e => {
           if (e.target.id === "1"){
@@ -68,7 +77,7 @@ document.addEventListener("DOMContentLoaded", evt => {
               formCard.append(mainButton)
               menuStars.append(formCard)
               form.reset()
-          } else if(e.target.id === "form-back-btn"){
+          } else if(e.target.matches(".form-back-btn")){
               menuStars.innerHTML = ""
               getMainStars()
           } else if(e.target.id === "sign-back-btn"){
@@ -82,7 +91,6 @@ document.addEventListener("DOMContentLoaded", evt => {
           }  else if(e.target.matches(".fav-btn")){
             const button = e.target
             addToFavorite(button)
-
           } else if(e.target.id === "3"){
               menuStars.innerHTML = ""
               renderFavCard(menuStars)
@@ -134,17 +142,6 @@ document.addEventListener("DOMContentLoaded", evt => {
             })
     }
 
-    const updateSignObj = (signObj) => {
-      let description = signObj.innerHTML
-      fetch(signObjectUrl, {
-        method: "POST", 
-        headers: {
-          "content-type": "application/json", 
-          accepts: "application/json"
-        }, 
-        body: JSON.stringify({description: description})
-      })
-    }
 
     const renderFavCard = (menuStars) => {
         const favCard = document.createElement('div')
@@ -211,8 +208,7 @@ document.addEventListener("DOMContentLoaded", evt => {
     }
 
     let mainButton = document.createElement('button')
-      mainButton.setAttribute('id', 'form-back-btn')
-      mainButton.classList = "btn btn-white btn-animated"
+      mainButton.classList = "form-back-btn", "btn btn-white btn-animated"
       mainButton.innerText = "main"
 
     let backToForm = document.createElement('button')
@@ -329,8 +325,6 @@ document.addEventListener("DOMContentLoaded", evt => {
         
        signCard.append(p, mainButton, backToForm)
        menuStars.append(signCard)
-      // signs.forEach(signObj => renderSign(signObj))
-
     }}
     
     const deleteFav = (button) => {
@@ -343,30 +337,6 @@ document.addEventListener("DOMContentLoaded", evt => {
             .then(button.parentElement.remove())
     }
 
-
-    // function renderSign(signObj) {
-    // }
-
     generateStars()
     clickHandler()
 })
-
-/* 
-I moved the form sign down here 
-*/
-form.innerHTML = `
-<h2 class="header-two">Welcome</h2>
-<label>What is your name?</label>
-<br>
-<input type="text" name="name" placeholder="name" value="">
-</br>
-</br>
-<label>Date of Birth</label>
-<br>
-<input type="date" id="birth-date" name="birth-date"
-   value=""
-   min="1900-01-01" max="2022-12-31">
-   <br>
-   </br>
-<input type="submit" name="submit"></br></br>
-`
