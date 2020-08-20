@@ -74,6 +74,61 @@ document.addEventListener("DOMContentLoaded", evt => {
         getSunSign(user, sign)
     }
 
+    const getSunSign = (user, sign) => {
+
+        fetch(sunUrl)
+            .then(resp => resp.json())
+            .then(signs => renderSigns(signs, user, sign))
+    }
+
+    function renderSigns(signs, user, signName){
+
+        menuStars.innerHTML = ""
+
+        let favBtn = document.createElement('button')
+        favBtn.classList = "fav-btn", "btn btn-white btn-animated"
+        favBtn.innerHTML = `&#x2665;`
+
+        signCard.innerHTML = ''
+        let br = document.createElement('br')
+        favBtn.dataset.id = user.id
+        if (signName != null || undefined) {
+            favBtn.dataset.id = user.id
+            let signObj = signs.filter(name => name.name === signName)
+            signCard.innerHTML = `
+            <h2 id="sign-name">${signName}</h2>
+            <p>${signObj[0].mental_traits}</p>            
+            `
+            signCard.append(br, favBtn)
+            signCard.append(mainButton, backToForm)
+            menuStars.append(signCard)
+
+            renderCelebBox(signObj)
+        }}
+
+    const renderCelebBox = (signObj) => {
+
+        const celebCard = document.createElement('div')
+        celebCard.setAttribute('class', 'card')
+        celebCard.setAttribute('id', 'celeb-card')
+
+        const celebContainerUl = document.createElement("ul")
+        signObj.forEach(item => {
+
+            item.famous_people.forEach(celeb => {
+                const celebLi = document.createElement('li')
+                celebLi.textContent = celeb
+                celebContainerUl.appendChild(celebLi)
+            })
+        })
+        celebCard.innerHTML = `
+            <h2>Celebrities</h2>
+        `
+        celebCard.appendChild(celebContainerUl)
+
+        menuStars.appendChild(celebCard)
+    }
+
     const clickHandler = () => {
         document.addEventListener("click", e => {
             if (e.target.id === "1"){
@@ -129,9 +184,6 @@ document.addEventListener("DOMContentLoaded", evt => {
     const generateStars = () => {
         const starContainer = document.getElementById("star-cluster")
 
-        //Menu Stars
-        getMainStars()
-
         //tiny stars
         for(let i=1; i < h; i++) {
             const x2star = document.createElement('div')
@@ -150,7 +202,11 @@ document.addEventListener("DOMContentLoaded", evt => {
             const randomHeight = Math.floor(Math.random() * h)
             x5star.setAttribute("style", `margin-left:${randomLength}px; margin-top: ${randomHeight}px`)
             starContainer.append(x5star)
+
         }
+
+        //Menu Stars
+        getMainStars()
 
     }
 
@@ -264,57 +320,11 @@ document.addEventListener("DOMContentLoaded", evt => {
           }
     }
 
-    const getSunSign = (user, sign) => {
 
-      fetch(sunUrl)
-      .then(resp => resp.json())
-      .then(signs => renderSigns(signs, user, sign))
-    }
 
-    function renderSigns(signs, user, signName){
 
-        let favBtn = document.createElement('button')
-        favBtn.classList = "fav-btn", "btn btn-white btn-animated"
-        favBtn.innerHTML = `&#x2665;`
 
-        signCard.innerHTML = ''
-        let br = document.createElement('br')
-        favBtn.dataset.id = user.id
-        if (signName != null || undefined) {
-            favBtn.dataset.id = user.id
-            let signObj = signs.filter(name => name.name === signName)
-            signCard.innerHTML = `
-            <h2 id="sign-name">${signName}</h2>
-            <p>${signObj[0].mental_traits}</p>            
-            `
-            signCard.append(br, favBtn)
-            signCard.append(mainButton, backToForm)
-            menuStars.append(signCard)
 
-            renderCelebBox(signObj)
-    }}
-
-    const renderCelebBox = (signObj) => {
-
-        const celebCard = document.createElement('div')
-        celebCard.setAttribute('class', 'card')
-        celebCard.setAttribute('id', 'celeb-card')
-
-        const celebContainerUl = document.createElement("ul")
-        signObj.forEach(item => {
-
-            item.famous_people.forEach(celeb => {
-                const celebLi = document.createElement('li')
-                celebLi.textContent = celeb
-                celebContainerUl.appendChild(celebLi)
-            })
-        })
-        celebCard.innerHTML = `
-            <h2>Celebrities</h2>
-        `
-        celebCard.appendChild(celebContainerUl)
-        menuStars.appendChild(celebCard)
-    }
 
     const renderFavCard = (menuStars) => {
         const favCard = document.createElement('div')
