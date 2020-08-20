@@ -23,14 +23,24 @@ document.addEventListener("DOMContentLoaded", evt => {
     const getMainStars = () => {
       for(let i=1; i < 4; i++) {
         const x10star = document.createElement('div')
-        x10star.classList.add("star10px")
+        x10star.classList.add("star10px", "avatar")
         x10star.setAttribute('id', `${i}`)
         const randomLength = Math.floor(Math.random() * 150)
         const randomHeight = Math.floor(Math.random() * 150)
         x10star.setAttribute("style", `margin-left:${randomLength}px; margin-top: ${randomHeight}px`)
         menuStars.append(x10star)
     }
+    const mainStar1 = document.getElementById('1')
+    mainStar1.dataset.tooltip = "My Sign"
+    const mainStar2 = document.getElementById('2')
+    mainStar2.dataset.tooltip = "thinkingCat"
+    const mainStar3 = document.getElementById('3')
+    mainStar3.dataset.tooltip = "Favorite Collection"
+
     }
+
+    
+
 
     const generateStars = () => {
         const starContainer = document.getElementById("star-cluster")
@@ -59,7 +69,6 @@ document.addEventListener("DOMContentLoaded", evt => {
         }
 
     }
-
     const clickHandler = () => {
       document.addEventListener("click", e => {
           if (e.target.id === "1"){

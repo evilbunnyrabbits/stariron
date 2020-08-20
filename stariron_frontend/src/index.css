@@ -148,3 +148,51 @@ h3 {
         opacity: 1;
     }
 }
+
+ .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        position: relative; 
+    }
+    .avatar::before, 
+    .avatar::after {
+        --scale: 0;
+        --tooltip-color: rgb(77, 77, 56);
+        --arrow-size: 10px;
+
+        position: absolute;
+        top: -.25rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+        transition: 300ms transform;
+        transform-origin: bottom center;
+    }
+
+    .avatar::before {
+        --translate-y: calc(-100% - var(--arrow-size));
+        content: attr(data-tooltip);
+        color: white;
+        padding:.5rem;
+        text-align: center;
+        width: max-content;
+        border-radius: .3rem;
+        max-width: 100%;
+        background: var(--tooltip-color);
+    }
+
+    .avatar:hover::before, 
+    .avatar:hover::after {
+        --scale: 1
+    }
+
+    .avatar::after {
+        --translate-y: calc(-1 * var(--arrow-size));
+        content: '';
+        border: var(--arrow-size) solid transparent;
+        border-top-color: var(--tooltip-color);
+        transform-origin: top center;
+    }
+
