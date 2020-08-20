@@ -106,6 +106,18 @@ h3 {
     margin-left: 10px;
 }
 
+.sign-index-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.index-table {
+    margin-left:12%;
+    margin-right:18%;
+
+}
+
 
 
 @keyframes fadeIn {
