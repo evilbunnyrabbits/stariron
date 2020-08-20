@@ -134,8 +134,6 @@ document.addEventListener("DOMContentLoaded", evt => {
             })
     }
 
-
-
     const updateSignObj = (signObj) => {
       let description = signObj.innerHTML
       fetch(signObjectUrl, {
@@ -192,8 +190,8 @@ document.addEventListener("DOMContentLoaded", evt => {
     }
 
     function renderUser(user){
-      form.innerHTML = ""
-      form.innerHTML = `
+        form.innerHTML = ""
+        form.innerHTML = `
     <h2 class="header-two">Welcome</h2>
     <label>What is your name?</label>
     <br>
@@ -349,7 +347,6 @@ document.addEventListener("DOMContentLoaded", evt => {
     // function renderSign(signObj) {
     // }
 
-    
     generateStars()
     clickHandler()
 })
