@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", evt => {
                 menuStars.append(signCard)
             }  else if(e.target.matches(".fav-btn")){
                 const button = e.target
+                button.setAttribute("style", "color: red")
                 addToFavorite(button)
             } else if(e.target.id === "3"){
                 menuStars.innerHTML = ""
@@ -192,43 +193,6 @@ document.addEventListener("DOMContentLoaded", evt => {
                     .then(res => res.json())
 
             })
-    }
-
-    const renderFavCard = (menuStars) => {
-        const favCard = document.createElement('div')
-        favCard.innerHTML = `
-            <h3>My Favorite Signs</h3>
-            <br />
-            `
-        const favList = document.createElement("div")
-        favList.classList.add("fav-container")
-
-        favCard.setAttribute("class", "card")
-        favCard.append(favList)
-
-        fetch(favoritesUrl)
-            .then(res => res.json())
-            .then(favorites => favorites.forEach(fav => {
-                const signId = fav.sign_object_id
-
-                fetch(signObjectUrl + signId)
-                    .then(res => res.json())
-                    .then(signObj => {
-
-                        const signObjDiv = document.createElement('div')
-                        signObjDiv.classList.add("fav-object-div")
-                        signObjDiv.innerHTML = `<b>${signObj.sign}</b><br />${signObj.content}<br /><br />`
-                        signObjDiv.dataset.id = fav.id
-                        const deleteButton = document.createElement("button")
-                        deleteButton.textContent = "Delete"
-                        deleteButton.classList.add("delete-fav-button")
-                        signObjDiv.append(deleteButton)
-                        favList.append(signObjDiv)
-                    })
-           }))
-        favCard.append(mainButton)
-
-        menuStars.append(favCard)
     }
 
     const getUser = () => {
@@ -337,8 +301,6 @@ document.addEventListener("DOMContentLoaded", evt => {
         celebCard.setAttribute('id', 'celeb-card')
 
         const celebContainerUl = document.createElement("ul")
-
-
         signObj.forEach(item => {
 
             item.famous_people.forEach(celeb => {
@@ -346,17 +308,49 @@ document.addEventListener("DOMContentLoaded", evt => {
                 celebLi.textContent = celeb
                 celebContainerUl.appendChild(celebLi)
             })
-
         })
-
         celebCard.innerHTML = `
             <h2>Celebrities</h2>
         `
         celebCard.appendChild(celebContainerUl)
-
         menuStars.appendChild(celebCard)
+    }
 
+    const renderFavCard = (menuStars) => {
+        const favCard = document.createElement('div')
+        favCard.innerHTML = `
+            <h3>My Favorite Signs</h3>
+            <br />
+            `
+        const favList = document.createElement("div")
+        favList.classList.add("fav-container")
 
+        favCard.setAttribute("class", "card")
+        favCard.append(favList)
+
+        fetch(favoritesUrl)
+            .then(res => res.json())
+            .then(favorites => favorites.forEach(fav => {
+                const signId = fav.sign_object_id
+
+                fetch(signObjectUrl + signId)
+                    .then(res => res.json())
+                    .then(signObj => {
+
+                        const signObjDiv = document.createElement('div')
+                        signObjDiv.classList.add("fav-object-div")
+                        signObjDiv.innerHTML = `<b>${signObj.sign}</b><br />${signObj.content}<br /><br />`
+                        signObjDiv.dataset.id = fav.id
+                        const deleteButton = document.createElement("button")
+                        deleteButton.textContent = "Delete"
+                        deleteButton.classList.add("delete-fav-button")
+                        signObjDiv.append(deleteButton)
+                        favList.append(signObjDiv)
+                    })
+            }))
+        favCard.append(mainButton)
+
+        menuStars.append(favCard)
     }
     
     const deleteFav = (button) => {
@@ -371,4 +365,5 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     generateStars()
     clickHandler()
+
 })
