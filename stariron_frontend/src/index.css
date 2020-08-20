@@ -79,7 +79,13 @@ body {
 .form{
     margin: auto;
     text-align: center;
-} 
+}
+
+.form-back-btn {
+    margin-left: 95%;
+
+
+}
 
 .delete-button {
     background-color: #4CAF50; /* Green */
@@ -113,8 +119,9 @@ h3 {
 }
 
 .index-table {
-    margin-left:12%;
-    margin-right:18%;
+    width: content-box;
+    margin-left:auto;
+    margin-right:auto;
 
 }
 

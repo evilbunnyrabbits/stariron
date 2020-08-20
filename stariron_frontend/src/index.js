@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     let mainButton = document.createElement('button')
     mainButton.classList = "form-back-btn", "btn btn-white btn-animated"
-    mainButton.innerText = "main"
+    mainButton.innerText = "X"
 
     let backToForm = document.createElement('button')
     backToForm.setAttribute('id', 'sign-back-btn')
@@ -406,23 +406,13 @@ document.addEventListener("DOMContentLoaded", evt => {
                 <td><img src="https://www.pngkey.com/png/full/82-826985_pisces-facts-pisces-zodiac-sign.png" alt="pisces" style="width: 60px; height: 60px; margin: 15px"/></td>
             `
 
-
         indexTable.append(tableRow1)
         indexTable.append(tableRow2)
         indexTable.append(tableRow3)
+
         indexContainer.append(indexTable)
 
-
-
-
-
-
-
-
-
-
         signCard.append(indexContainer)
-
     }
 
     generateStars()
