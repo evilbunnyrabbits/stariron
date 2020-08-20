@@ -4477,3 +4477,1841 @@ Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 2650)
 Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 2543)
 
 
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 17:37:59 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 26ms (Views: 0.8ms | ActiveRecord: 11.0ms | Allocations: 6099)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 17:38:00 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Stephen ", "birthday"=>"1998-12-02", "id"=>"1", "user"=>{"name"=>"Stephen ", "birthday"=>"1998-12-02"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1206)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 17:38:18 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Stephen ", "birthday"=>"1999-01-29", "id"=>"1", "user"=>{"name"=>"Stephen ", "birthday"=>"1999-01-29"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "birthday" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["birthday", "1999-01-29"], ["updated_at", "2020-08-19 21:38:18.546588"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+Completed 200 OK in 12ms (Views: 0.9ms | ActiveRecord: 6.0ms | Allocations: 3214)
+
+
+Started POST "/sign_object/" for 127.0.0.1 at 2020-08-19 17:38:38 -0400
+Processing by SignObjectController#create as JSON
+  Parameters: {"sign"=>"Aquarius", "content"=>"Aquarius people love to help others, They are liberal, democratic, humanitarians who are broad-minded and enjoys social equality, They are considered reformers, but can be cold and indifferent, They are often eccentric, erratic, rebellious, unpredictable, highly opinionated, original, one-of-a-kind, friendly, sharp-tongued, idealistic, inventive, quick to change their minds, and resolute♥", "sign_object"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.2ms | Allocations: 149)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: sign_object):
+  
+app/controllers/sign_object_controller.rb:34:in `sign_object_params'
+app/controllers/sign_object_controller.rb:9:in `create'
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 17:38:38 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "favorite"=>{"user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 4.0ms | Allocations: 10675)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 17:39:05 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Stephen ", "birthday"=>"1999-01-29", "id"=>"1", "user"=>{"name"=>"Stephen ", "birthday"=>"1999-01-29"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1007)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 17:39:06 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Stephen ", "birthday"=>"1999-01-29", "id"=>"1", "user"=>{"name"=>"Stephen ", "birthday"=>"1999-01-29"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 993)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 17:39:08 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Stephen ", "birthday"=>"1999-01-29", "id"=>"1", "user"=>{"name"=>"Stephen ", "birthday"=>"1999-01-29"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 991)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1189243014167491080)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1189243014167491080)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sign_objects" WHERE "sign_objects"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Destroy (0.2ms)[0m  [1m[31mDELETE FROM "sign_objects" WHERE "sign_objects"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Destroy (0.2ms)[0m  [1m[31mDELETE FROM "sign_objects" WHERE "sign_objects"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Destroy (0.3ms)[0m  [1m[31mDELETE FROM "sign_objects" WHERE "sign_objects"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Test_User"], ["birthday", "2015-12-08"], ["created_at", "2020-08-19 21:41:12.571272"], ["updated_at", "2020-08-19 21:41:12.571272"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 17:41:34 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 2.0ms | Allocations: 2411)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 17:41:36 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 404 Not Found in 14ms (ActiveRecord: 6.8ms | Allocations: 2487)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:16:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 17:41:47 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms | Allocations: 654)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:16:in `show'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (41.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stariron_backend_development"[0m
+  [1m[35m (35.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stariron_backend_test"[0m
+  [1m[35m (212.5ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (92.8ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1189243014167491080)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200813214447)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "birthday" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200813214447"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSignObjects (20200813214559)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.8ms)[0m  [1m[35mCREATE TABLE "sign_objects" ("id" bigserial primary key, "sign" character varying, "content" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200813214559"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFavorites (20200813214838)
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" bigserial primary key, "user_id" integer, "sign_object_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200813214838"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-19 21:42:28.120042"], ["updated_at", "2020-08-19 21:42:28.120042"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1189243014167491080)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Test_User"], ["birthday", "2015-12-08"], ["created_at", "2020-08-19 21:42:35.428103"], ["updated_at", "2020-08-19 21:42:35.428103"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.4ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.438655"], ["updated_at", "2020-08-19 21:42:35.438655"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.442513"], ["updated_at", "2020-08-19 21:42:35.442513"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.446100"], ["updated_at", "2020-08-19 21:42:35.446100"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.3ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.449522"], ["updated_at", "2020-08-19 21:42:35.449522"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.4ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.452978"], ["updated_at", "2020-08-19 21:42:35.452978"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.456735"], ["updated_at", "2020-08-19 21:42:35.456735"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.460305"], ["updated_at", "2020-08-19 21:42:35.460305"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.463637"], ["updated_at", "2020-08-19 21:42:35.463637"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.466936"], ["updated_at", "2020-08-19 21:42:35.466936"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:42:35.470353"], ["updated_at", "2020-08-19 21:42:35.470353"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.5ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 1], ["created_at", "2020-08-19 21:42:35.488115"], ["updated_at", "2020-08-19 21:42:35.488115"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 2], ["created_at", "2020-08-19 21:42:35.495289"], ["updated_at", "2020-08-19 21:42:35.495289"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 3], ["created_at", "2020-08-19 21:42:35.501846"], ["updated_at", "2020-08-19 21:42:35.501846"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 4], ["created_at", "2020-08-19 21:42:35.508353"], ["updated_at", "2020-08-19 21:42:35.508353"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 5], ["created_at", "2020-08-19 21:42:35.515065"], ["updated_at", "2020-08-19 21:42:35.515065"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 6], ["created_at", "2020-08-19 21:42:35.522810"], ["updated_at", "2020-08-19 21:42:35.522810"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 7], ["created_at", "2020-08-19 21:42:35.529096"], ["updated_at", "2020-08-19 21:42:35.529096"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 8], ["created_at", "2020-08-19 21:42:35.535942"], ["updated_at", "2020-08-19 21:42:35.535942"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 9], ["created_at", "2020-08-19 21:42:35.554431"], ["updated_at", "2020-08-19 21:42:35.554431"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 10], ["created_at", "2020-08-19 21:42:35.561170"], ["updated_at", "2020-08-19 21:42:35.561170"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 17:42:45 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 21ms (Views: 0.9ms | ActiveRecord: 8.4ms | Allocations: 6007)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 17:43:34 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Test", "birthday"=>"2015-12-08", "id"=>"1", "user"=>{"name"=>"Test", "birthday"=>"2015-12-08"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["name", "Test"], ["updated_at", "2020-08-19 21:43:34.215585"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 3401)
+
+
+Started POST "/sign_object/" for 127.0.0.1 at 2020-08-19 17:43:35 -0400
+Processing by SignObjectController#create as JSON
+  Parameters: {"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥", "sign_object"=>{"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[36mSignObject Create (0.6ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Sagittarius"], ["content", "They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"], ["created_at", "2020-08-19 21:43:35.940885"], ["updated_at", "2020-08-19 21:43:35.940885"]]
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 4.7ms | Allocations: 5717)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 17:43:35 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "sign_object_id"=>11, "favorite"=>{"user_id"=>1, "sign_object_id"=>11}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mFavorite Create (0.5ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 11], ["created_at", "2020-08-19 21:43:35.979541"], ["updated_at", "2020-08-19 21:43:35.979541"]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 5.0ms | Allocations: 9455)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 1986)
+
+
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+Processing by SignObjectController#show as */*
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+  Parameters: {"id"=>"2"}
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 1109)
+
+
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mSignObject Load (1.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 1223)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mSignObject Load (18.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"3"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"5"}
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 5.7ms | Allocations: 5574)
+
+
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 18.1ms | Allocations: 7969)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+  [1m[36mSignObject Load (8.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (4.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 10.3ms | Allocations: 3063)
+
+
+  Parameters: {"id"=>"9"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 24ms (Views: 0.5ms | ActiveRecord: 6.5ms | Allocations: 4404)
+
+
+  [1m[36mSignObject Load (2.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 25ms (Views: 0.6ms | ActiveRecord: 10.7ms | Allocations: 4962)
+
+
+Started GET "/sign_object/11" for 127.0.0.1 at 2020-08-19 17:43:39 -0400
+  [1m[36mSignObject Load (24.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (22.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 24.3ms | Allocations: 2786)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"11"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 29ms (Views: 0.6ms | ActiveRecord: 22.7ms | Allocations: 3817)
+
+
+  [1m[36mSignObject Load (8.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 8.9ms | Allocations: 1223)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 17:43:40 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 733)
+
+
+Started POST "/sign_object/" for 127.0.0.1 at 2020-08-19 17:49:47 -0400
+Processing by SignObjectController#create as JSON
+  Parameters: {"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥", "sign_object"=>{"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[36mSignObject Create (0.8ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Sagittarius"], ["content", "They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"], ["created_at", "2020-08-19 21:49:47.029907"], ["updated_at", "2020-08-19 21:49:47.029907"]]
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2569)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 17:49:47 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "sign_object_id"=>12, "favorite"=>{"user_id"=>1, "sign_object_id"=>12}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mFavorite Create (0.7ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 12], ["created_at", "2020-08-19 21:49:47.076841"], ["updated_at", "2020-08-19 21:49:47.076841"]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 4912)
+
+
+Started POST "/sign_object/" for 127.0.0.1 at 2020-08-19 17:49:47 -0400
+Processing by SignObjectController#create as JSON
+  Parameters: {"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥", "sign_object"=>{"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[36mSignObject Create (2.3ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Sagittarius"], ["content", "They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"], ["created_at", "2020-08-19 21:49:47.230430"], ["updated_at", "2020-08-19 21:49:47.230430"]]
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.6ms | Allocations: 2549)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 17:49:47 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "sign_object_id"=>13, "favorite"=>{"user_id"=>1, "sign_object_id"=>13}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 13], ["created_at", "2020-08-19 21:49:47.257391"], ["updated_at", "2020-08-19 21:49:47.257391"]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 4820)
+
+
+Started POST "/sign_object/" for 127.0.0.1 at 2020-08-19 17:49:47 -0400
+Processing by SignObjectController#create as JSON
+  Parameters: {"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥", "sign_object"=>{"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[36mSignObject Create (1.3ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Sagittarius"], ["content", "They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"], ["created_at", "2020-08-19 21:49:47.351419"], ["updated_at", "2020-08-19 21:49:47.351419"]]
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 2549)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 17:49:47 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "sign_object_id"=>14, "favorite"=>{"user_id"=>1, "sign_object_id"=>14}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 14], ["created_at", "2020-08-19 21:49:47.373630"], ["updated_at", "2020-08-19 21:49:47.373630"]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 4822)
+
+
+Started POST "/sign_object/" for 127.0.0.1 at 2020-08-19 17:49:47 -0400
+Processing by SignObjectController#create as JSON
+  Parameters: {"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥", "sign_object"=>{"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[36mSignObject Create (0.7ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Sagittarius"], ["content", "They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"], ["created_at", "2020-08-19 21:49:47.552109"], ["updated_at", "2020-08-19 21:49:47.552109"]]
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 2549)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 17:49:47 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "sign_object_id"=>15, "favorite"=>{"user_id"=>1, "sign_object_id"=>15}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 15], ["created_at", "2020-08-19 21:49:47.573691"], ["updated_at", "2020-08-19 21:49:47.573691"]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 4820)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 17:49:50 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.9ms | Allocations: 2368)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 17:49:50 -0400
+Processing by SignObjectController#show as */*
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 17:49:50 -0400
+  Parameters: {"id"=>"1"}
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 17:49:50 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 17:49:50 -0400
+Started GET "/sign_object/12" for 127.0.0.1 at 2020-08-19 17:49:50 -0400
+  [1m[36mSignObject Load (1.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 1728)
+
+
+Started GET "/sign_object/13" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 813)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 5670)
+
+
+  Parameters: {"id"=>"3"}
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"12"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mSignObject Load (4.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 15ms (Views: 2.5ms | ActiveRecord: 9.1ms | Allocations: 2247)
+
+
+Started GET "/sign_object/14" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mSignObject Load (30.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 32ms (Views: 0.5ms | ActiveRecord: 30.2ms | Allocations: 2593)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (36.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"14"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 42ms (Views: 0.5ms | ActiveRecord: 14.5ms | Allocations: 3795)
+
+
+Completed 200 OK in 91ms (Views: 0.5ms | ActiveRecord: 38.6ms | Allocations: 10464)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Completed 200 OK in 74ms (Views: 1.1ms | ActiveRecord: 31.2ms | Allocations: 6013)
+
+
+  [1m[36mSignObject Load (2.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mSignObject Load (12.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 2.6ms | Allocations: 2867)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Started GET "/sign_object/15" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 12.2ms | Allocations: 3865)
+
+
+Started GET "/sign_object/11" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (6.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"11"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"15"}
+Processing by SignObjectController#show as */*
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 6.5ms | Allocations: 1910)
+
+
+  [1m[36mSignObject Load (1.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Parameters: {"id"=>"10"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.8ms | Allocations: 1337)
+
+
+  [1m[36mSignObject Load (2.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 2.2ms | Allocations: 1166)
+
+
+  [1m[36mSignObject Load (7.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 7.0ms | Allocations: 2809)
+
+
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 17:49:51 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 733)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (34.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stariron_backend_development"[0m
+  [1m[35m (32.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "stariron_backend_test"[0m
+  [1m[35m (92.4ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (92.9ms)[0m  [1m[35mCREATE DATABASE "stariron_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1189243014167491080)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200813214447)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "birthday" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200813214447"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSignObjects (20200813214559)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "sign_objects" ("id" bigserial primary key, "sign" character varying, "content" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200813214559"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFavorites (20200813214838)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" bigserial primary key, "user_id" integer, "sign_object_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200813214838"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (17.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-08-19 21:51:20.168886"], ["updated_at", "2020-08-19 21:51:20.168886"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1189243014167491080)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "birthday", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Test_User"], ["birthday", "2015-12-08"], ["created_at", "2020-08-19 21:51:26.844716"], ["updated_at", "2020-08-19 21:51:26.844716"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.4ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.855412"], ["updated_at", "2020-08-19 21:51:26.855412"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.859334"], ["updated_at", "2020-08-19 21:51:26.859334"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.2ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.862635"], ["updated_at", "2020-08-19 21:51:26.862635"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.3ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.885633"], ["updated_at", "2020-08-19 21:51:26.885633"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.4ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.890555"], ["updated_at", "2020-08-19 21:51:26.890555"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.4ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.896101"], ["updated_at", "2020-08-19 21:51:26.896101"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.4ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.901269"], ["updated_at", "2020-08-19 21:51:26.901269"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.3ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.906458"], ["updated_at", "2020-08-19 21:51:26.906458"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.3ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.910944"], ["updated_at", "2020-08-19 21:51:26.910944"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSignObject Create (0.4ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Tarus"], ["content", "Leos are loving and sensitive leaders, Leos love children, are very attractive, enjoy luxury and jewelry, and have a bigger-than-life dramatic attitude, Leos are show-offs, egoistical, dominant, powerful, determined, charismatic, very demanding, athletic, smart, arrogant, pompous, conceited, temperamental, competitive, passionate, stubborn, loud, loyal, strong-willed, and usually laid-back, but can be highly aggressive or even potentially destructive, They typically want to be the center of attention and have a tremendous sense of vitality"], ["created_at", "2020-08-19 21:51:26.915379"], ["updated_at", "2020-08-19 21:51:26.915379"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 1], ["created_at", "2020-08-19 21:51:26.936139"], ["updated_at", "2020-08-19 21:51:26.936139"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 2], ["created_at", "2020-08-19 21:51:26.949550"], ["updated_at", "2020-08-19 21:51:26.949550"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 3], ["created_at", "2020-08-19 21:51:26.956878"], ["updated_at", "2020-08-19 21:51:26.956878"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 4], ["created_at", "2020-08-19 21:51:26.963307"], ["updated_at", "2020-08-19 21:51:26.963307"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 5], ["created_at", "2020-08-19 21:51:26.969866"], ["updated_at", "2020-08-19 21:51:26.969866"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 6], ["created_at", "2020-08-19 21:51:26.976134"], ["updated_at", "2020-08-19 21:51:26.976134"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 7], ["created_at", "2020-08-19 21:51:26.982178"], ["updated_at", "2020-08-19 21:51:26.982178"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 8], ["created_at", "2020-08-19 21:51:26.987782"], ["updated_at", "2020-08-19 21:51:26.987782"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.2ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 9], ["created_at", "2020-08-19 21:51:26.993418"], ["updated_at", "2020-08-19 21:51:26.993418"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (0.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.3ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 10], ["created_at", "2020-08-19 21:51:27.011439"], ["updated_at", "2020-08-19 21:51:27.011439"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 18:28:23 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 28ms (Views: 0.7ms | ActiveRecord: 15.8ms | Allocations: 6007)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 18:28:29 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Baby ", "birthday"=>"2015-12-01", "id"=>"1", "user"=>{"name"=>"Baby ", "birthday"=>"2015-12-01"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "birthday" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "Baby "], ["birthday", "2015-12-01"], ["updated_at", "2020-08-19 22:28:29.796856"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `update'
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `update'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 6.5ms | Allocations: 3418)
+
+
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-19 18:28:39 -0400
+Processing by SignObjectController#index as */*
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 4.0ms | Allocations: 6518)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 18:28:39 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "favorite"=>{"user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 8786)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1901)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 847)
+
+
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 871)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (11.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (2.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 11.0ms | Allocations: 4320)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+  Parameters: {"id"=>"4"}
+Completed 200 OK in 17ms (Views: 0.7ms | ActiveRecord: 4.0ms | Allocations: 4258)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1089)
+
+
+  Parameters: {"id"=>"9"}
+  [1m[36mSignObject Load (10.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 12.5ms | Allocations: 4035)
+
+
+  [1m[36mSignObject Load (13.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 22ms (Views: 0.8ms | ActiveRecord: 15.0ms | Allocations: 4881)
+
+
+  [1m[36mSignObject Load (25.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 25.5ms | Allocations: 2731)
+
+
+  [1m[36mSignObject Load (2.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 34ms (Views: 0.3ms | ActiveRecord: 22.1ms | Allocations: 5381)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 18:28:43 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 733)
+
+
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-19 18:29:00 -0400
+Processing by SignObjectController#index as */*
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 2002)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 18:29:00 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "favorite"=>{"user_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 3266)
+
+
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-19 18:29:00 -0400
+Processing by SignObjectController#index as */*
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 2003)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 18:29:00 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "favorite"=>{"user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 3264)
+
+
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-19 18:29:01 -0400
+Processing by SignObjectController#index as */*
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 2001)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 18:29:01 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "favorite"=>{"user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 3264)
+
+
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-19 18:29:01 -0400
+Processing by SignObjectController#index as */*
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 2000)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 18:29:01 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "favorite"=>{"user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 3264)
+
+
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-19 18:29:01 -0400
+Processing by SignObjectController#index as */*
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 2000)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 18:29:01 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "favorite"=>{"user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 3264)
+
+
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-19 18:29:02 -0400
+Processing by SignObjectController#index as */*
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 2000)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 18:29:02 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "favorite"=>{"user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 3266)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1840)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+  [1m[36mSignObject Load (3.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (2.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"5"}
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 3.3ms | Allocations: 2820)
+
+
+  [1m[36mSignObject Load (0.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 1442)
+
+
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.9ms | Allocations: 2226)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+  Parameters: {"id"=>"4"}
+  Parameters: {"id"=>"6"}
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+  [1m[36mSignObject Load (6.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (5.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 6.1ms | Allocations: 3230)
+
+
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1569)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 2426)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 5.2ms | Allocations: 5070)
+
+
+  [1m[36mSignObject Load (15.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"10"}
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 15.2ms | Allocations: 2425)
+
+
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 928)
+
+
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 18:29:05 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 754)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 18:29:18 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (10.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 18ms (Views: 1.6ms | ActiveRecord: 10.2ms | Allocations: 757)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 18:29:19 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Baby ", "birthday"=>"2015-12-01", "id"=>"1", "user"=>{"name"=>"Baby ", "birthday"=>"2015-12-01"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 989)
+
+
+Started GET "/sign_object/" for 127.0.0.1 at 2020-08-19 18:29:21 -0400
+Processing by SignObjectController#index as */*
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects"[0m
+  ↳ app/controllers/sign_object_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 2004)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 18:29:21 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "favorite"=>{"user_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 3264)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.5ms | Allocations: 1855)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"2"}
+  Parameters: {"id"=>"5"}
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (1.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"4"}
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.8ms | Allocations: 2084)
+
+
+  [1m[36mSignObject Load (2.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2466)
+
+
+Processing by SignObjectController#show as */*
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2449)
+
+
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 2.4ms | Allocations: 2713)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+  Parameters: {"id"=>"3"}
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 18:29:23 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mSignObject Load (23.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 23.6ms | Allocations: 2611)
+
+
+  Parameters: {"id"=>"10"}
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (12.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mSignObject Load (19.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (22.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (2.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 0.5ms | ActiveRecord: 19.5ms | Allocations: 2112)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 48ms (Views: 0.3ms | ActiveRecord: 12.4ms | Allocations: 4174)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 45ms (Views: 0.5ms | ActiveRecord: 22.4ms | Allocations: 4540)
+
+
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 2.1ms | Allocations: 2221)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 18:29:24 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 733)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (3.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 3.9ms | Allocations: 1840)
+
+
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+  Parameters: {"id"=>"4"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (3.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 1129)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 1825)
+
+
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+  [1m[36mSignObject Load (9.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (9.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"9"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 20ms (Views: 1.0ms | ActiveRecord: 9.7ms | Allocations: 4157)
+
+
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 9.4ms | Allocations: 4352)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+  [1m[36mSignObject Load (20.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"7"}
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 20.5ms | Allocations: 6348)
+
+
+  [1m[36mSignObject Load (12.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"10"}
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 12.1ms | Allocations: 3705)
+
+
+  [1m[36mSignObject Load (10.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 10.4ms | Allocations: 2299)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (2.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 2.6ms | Allocations: 733)
+
+
+  [1m[36mSignObject Load (11.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 15ms (Views: 0.9ms | ActiveRecord: 11.6ms | Allocations: 3170)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 18:30:00 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 733)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 18:30:06 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 739)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 18:30:07 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Baby ", "birthday"=>"2015-12-01", "id"=>"1", "user"=>{"name"=>"Baby ", "birthday"=>"2015-12-01"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 989)
+
+
+Started POST "/sign_object/" for 127.0.0.1 at 2020-08-19 18:30:08 -0400
+Processing by SignObjectController#create as JSON
+  Parameters: {"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥", "sign_object"=>{"sign"=>"Sagittarius", "content"=>"They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[36mSignObject Create (0.5ms)[0m  [1m[32mINSERT INTO "sign_objects" ("sign", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sign", "Sagittarius"], ["content", "They are adventurous, independent, friendly, enthusiastic, broad-minded, overly-optimistic, brave, intelligent, charismatic, flirtatious, rebellious, love theory, tend to apply textbook theory to their pursuits, are highly capable of being technical, tend to be all-knowing and freedom-seeking, Sagittariuses dislike restrictions, They are talkative, natural entertainers, impulsive, exaggerating, over-indulgent, blunt, risk-takers, with a child-like wonder, Sagittarius people are always hungry for knowledge, opportunistic, philanthropic, and philosophical♥"], ["created_at", "2020-08-19 22:30:08.917775"], ["updated_at", "2020-08-19 22:30:08.917775"]]
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sign_object_controller.rb:9:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 2697)
+
+
+Started POST "/favorites/" for 127.0.0.1 at 2020-08-19 18:30:08 -0400
+Processing by FavoritesController#create as JSON
+  Parameters: {"user_id"=>1, "sign_object_id"=>11, "favorite"=>{"user_id"=>1, "sign_object_id"=>11}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "sign_object_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["sign_object_id", 11], ["created_at", "2020-08-19 22:30:08.939932"], ["updated_at", "2020-08-19 22:30:08.939932"]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 5025)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1943)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+  Parameters: {"id"=>"2"}
+  [1m[36mSignObject Load (3.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 2382)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (9.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 9.0ms | Allocations: 2154)
+
+
+  [1m[36mSignObject Load (10.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 10.7ms | Allocations: 3460)
+
+
+  [1m[36mSignObject Load (3.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mSignObject Load (6.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 3.4ms | Allocations: 3032)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 6.8ms | Allocations: 5199)
+
+
+  [1m[36mSignObject Load (6.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 6.2ms | Allocations: 3008)
+
+
+  Parameters: {"id"=>"8"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+  Parameters: {"id"=>"10"}
+Started GET "/sign_object/11" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+  [1m[36mSignObject Load (7.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mSignObject Load (9.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mSignObject Load (6.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 7.1ms | Allocations: 2125)
+
+
+  Parameters: {"id"=>"11"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 6.3ms | Allocations: 2804)
+
+
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 9.0ms | Allocations: 2499)
+
+
+  [1m[36mSignObject Load (17.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 17.8ms | Allocations: 1361)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 18:30:11 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 733)
+
+
+Started DELETE "/favorites/11" for 127.0.0.1 at 2020-08-19 18:30:18 -0400
+Processing by FavoritesController#destroy as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[36mFavorite Destroy (0.3ms)[0m  [1m[31mDELETE FROM "favorites" WHERE "favorites"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:21:in `destroy'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 2628)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 1893)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+Processing by SignObjectController#show as */*
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+  Parameters: {"id"=>"2"}
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 1065)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 1089)
+
+
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mSignObject Load (7.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 32ms (Views: 0.4ms | ActiveRecord: 7.5ms | Allocations: 4787)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"1"}
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (2.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"8"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+  Parameters: {"id"=>"3"}
+  [1m[36mSignObject Load (3.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 9.5ms | Allocations: 5318)
+
+
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 1367)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+  [1m[36mSignObject Load (19.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (2.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (2.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 21.1ms | Allocations: 3336)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 29ms (Views: 0.5ms | ActiveRecord: 3.1ms | Allocations: 4419)
+
+
+  [1m[36mSignObject Load (1.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 3987)
+
+
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 10ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 2333)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 18:38:06 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 733)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 1840)
+
+
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+Processing by SignObjectController#show as */*
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+  Parameters: {"id"=>"1"}
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"2"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 989)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (2.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (2.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSignObject Load (2.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSignObject Load (1.6ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"7"}
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 3301)
+
+
+Completed 200 OK in 18ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 5287)
+
+
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 2238)
+
+
+  [1m[36mSignObject Load (2.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 1317)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 3813)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+Processing by SignObjectController#show as */*
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 18:38:09 -0400
+  Parameters: {"id"=>"8"}
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1472)
+
+
+  Parameters: {"id"=>"9"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mSignObject Load (2.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 2.4ms | Allocations: 872)
+
+
+  [1m[36mSignObject Load (10.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 10.1ms | Allocations: 1630)
+
+
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 18:38:10 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 733)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.9ms | Allocations: 1857)
+
+
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"6"}
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+  Parameters: {"id"=>"4"}
+  [1m[36mSignObject Load (0.5ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (1.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSignObject Load (3.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1667)
+
+
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 2657)
+
+
+  Parameters: {"id"=>"5"}
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 2728)
+
+
+  Parameters: {"id"=>"1"}
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+  [1m[36mSignObject Load (11.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (8.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 11.1ms | Allocations: 2125)
+
+
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"8"}
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 8.7ms | Allocations: 2983)
+
+
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 18:38:12 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"7"}
+  Parameters: {"id"=>"9"}
+  [1m[36mSignObject Load (5.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (4.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 4.3ms | Allocations: 1905)
+
+
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 5.7ms | Allocations: 1801)
+
+
+  [1m[36mSignObject Load (3.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 3.8ms | Allocations: 2975)
+
+
+  [1m[36mSignObject Load (12.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 12.7ms | Allocations: 1790)
+
+
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 18:38:13 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mSignObject Load (0.7ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 733)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 1857)
+
+
+Started GET "/sign_object/2" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+Started GET "/sign_object/3" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+Started GET "/sign_object/1" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+Started GET "/sign_object/6" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"2"}
+Started GET "/sign_object/4" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"3"}
+  [1m[36mSignObject Load (1.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSignObject Load (1.0ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  Parameters: {"id"=>"6"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2218)
+
+
+  [1m[36mSignObject Load (0.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"4"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 2095)
+
+
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 2529)
+
+
+Started GET "/sign_object/9" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 2222)
+
+
+Started GET "/sign_object/8" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+Started GET "/sign_object/7" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+Started GET "/sign_object/10" for 127.0.0.1 at 2020-08-19 18:38:16 -0400
+  [1m[36mSignObject Load (13.4ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Processing by SignObjectController#show as */*
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 13.4ms | Allocations: 2724)
+
+
+  Parameters: {"id"=>"9"}
+Processing by SignObjectController#show as */*
+Processing by SignObjectController#show as */*
+  [1m[36mSignObject Load (3.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"10"}
+  Parameters: {"id"=>"8"}
+  Parameters: {"id"=>"7"}
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  [1m[36mSignObject Load (1.1ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.8ms | Allocations: 2164)
+
+
+  [1m[36mSignObject Load (2.8ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 1970)
+
+
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 1653)
+
+
+  [1m[36mSignObject Load (22.9ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 22.9ms | Allocations: 2959)
+
+
+Started GET "/sign_object/5" for 127.0.0.1 at 2020-08-19 18:38:17 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mSignObject Load (0.3ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 733)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 18:58:47 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 839)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-19 19:01:49 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 739)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-19 19:01:51 -0400
+Processing by UsersController#update as */*
+  Parameters: {"name"=>"Baby ", "birthday"=>"2015-12-01", "id"=>"1", "user"=>{"name"=>"Baby ", "birthday"=>"2015-12-01"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 989)
+
+
