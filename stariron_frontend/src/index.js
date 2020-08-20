@@ -20,6 +20,24 @@ const form = document.createElement('form')
 
 document.addEventListener("DOMContentLoaded", evt => {
 
+    let mainButton = document.createElement('button')
+    mainButton.classList = "form-back-btn", "btn btn-white btn-animated"
+    mainButton.innerText = "main"
+
+    let backToForm = document.createElement('button')
+    backToForm.setAttribute('id', 'sign-back-btn')
+    backToForm.classList = "btn btn-white btn-animated"
+    backToForm.innerText = "back to form"
+
+    const signCard = document.createElement('div')
+    signCard.setAttribute('class', 'card')
+    signCard.setAttribute('id', 'sign-card')
+
+    formCard.append(form, mainButton)
+
+
+
+
     const getMainStars = () => {
       for(let i=1; i < 4; i++) {
         const x10star = document.createElement('div')
@@ -38,9 +56,6 @@ document.addEventListener("DOMContentLoaded", evt => {
     mainStar3.dataset.tooltip = "Favorite Collection"
 
     }
-
-    
-
 
     const generateStars = () => {
         const starContainer = document.getElementById("star-cluster")
@@ -69,6 +84,7 @@ document.addEventListener("DOMContentLoaded", evt => {
         }
 
     }
+
     const clickHandler = () => {
       document.addEventListener("click", e => {
           if (e.target.id === "1"){
@@ -142,7 +158,6 @@ document.addEventListener("DOMContentLoaded", evt => {
             })
     }
 
-
     const renderFavCard = (menuStars) => {
         const favCard = document.createElement('div')
         favCard.innerHTML = `
@@ -189,46 +204,30 @@ document.addEventListener("DOMContentLoaded", evt => {
     function renderUser(user){
         form.innerHTML = ""
         form.innerHTML = `
-    <h2 class="header-two">Welcome</h2>
-    <label>What is your name?</label>
-    <br>
-    <input type="text" name="name" placeholder="name" value="${user.name}">
-    </br>
-    </br>
-    <label>Date of Birth</label>
-    <br>
-    <input type="date" id="birth-date" name="birth-date"
-       value="${user.birthday}"
-       min="1900-01-01" max="2022-12-31">
-       <br>
-       </br>
-    <input type="submit" name="submit"></br></br>
-    `
-    submitHandler(form, user)
+        <h2 class="header-two">Welcome</h2>
+        <label>What is your name?</label>
+        <br>
+        <input type="text" name="name" placeholder="name" value="${user.name}">
+        </br>
+        </br>
+        <label>Date of Birth</label>
+        <br>
+        <input type="date" id="birth-date" name="birth-date"
+           value="${user.birthday}"
+           min="1900-01-01" max="2022-12-31">
+           <br>
+           </br>
+        <input type="submit" name="submit"></br></br>
+        `
+        submitHandler(user)
     }
 
-    let mainButton = document.createElement('button')
-      mainButton.classList = "form-back-btn", "btn btn-white btn-animated"
-      mainButton.innerText = "main"
-
-    let backToForm = document.createElement('button')
-      backToForm.setAttribute('id', 'sign-back-btn')
-      backToForm.classList = "btn btn-white btn-animated"
-      backToForm.innerText = "back to form"
-
-    let favBtn = document.createElement('button')
-      favBtn.classList = "fav-btn", "btn btn-white btn-animated"
-      favBtn.innerHTML = `&#x2665;`
-
-
-    formCard.append(form, mainButton)
-
-    const submitHandler = (info, user) => {
+    const submitHandler = (user) => {
         form.addEventListener('submit', e => {
             e.preventDefault()
 
-            const birthDate = info.querySelector("#birth-date").value 
-            const name = info.name.value 
+            const birthDate = user.birthday
+            const name = user.name
 
 
           fetch(usersUrl, {
@@ -250,17 +249,11 @@ document.addEventListener("DOMContentLoaded", evt => {
             let sign = calculateSun(month, day)
 
             signCard.innerHTML = ""
-            signCard.innerHTML = `
-            <h2 id="sign-name">${sign}</h2>
-            `
-            getSunSign(user)
+
+            getSunSign(user, sign)
             // form.reset()
         })
     }
-
-    const signCard = document.createElement('div')
-    signCard.setAttribute('class', 'card')
-    signCard.setAttribute('id', 'sign-card')
     
     const calculateSun = (month, day) => {
         let sign 
@@ -304,28 +297,66 @@ document.addEventListener("DOMContentLoaded", evt => {
           }
     }
 
-    const getSunSign = (user) => {
+    const getSunSign = (user, sign) => {
+
+
       fetch(sunUrl)
       .then(resp => resp.json())
-      .then(signs => renderSigns(signs, user))
+      .then(signs => renderSigns(signs, user, sign))
     }
 
-    function renderSigns(signs, user){
-      let sign = signCard.querySelector('#sign-name').innerText
-      let br = document.createElement('br')
-      favBtn.dataset.id = user.id
+    function renderSigns(signs, user, signName){
 
-      if (sign != null || undefined) {
-       let p = document.createElement('p')
-       favBtn.dataset.id = user.id
-       signObj = signs.filter(name => name.name === sign)
-       p.innerText = `${signObj[0].mental_traits}`
+        let favBtn = document.createElement('button')
+        favBtn.classList = "fav-btn", "btn btn-white btn-animated"
+        favBtn.innerHTML = `&#x2665;`
 
-       p.append(br, favBtn)
-        
-       signCard.append(p, mainButton, backToForm)
-       menuStars.append(signCard)
+        signCard.innerHTML = ''
+        let br = document.createElement('br')
+        favBtn.dataset.id = user.id
+        if (signName != null || undefined) {
+            favBtn.dataset.id = user.id
+            let signObj = signs.filter(name => name.name === signName)
+            signCard.innerHTML = `
+            <h2 id="sign-name">${signName}</h2>
+            <p>${signObj[0].mental_traits}</p>            
+            `
+            signCard.append(br, favBtn)
+            signCard.append(mainButton, backToForm)
+            menuStars.append(signCard)
+
+            renderCelebBox(signObj)
     }}
+
+    const renderCelebBox = (signObj) => {
+
+        const celebCard = document.createElement('div')
+        celebCard.setAttribute('class', 'card')
+        celebCard.setAttribute('id', 'celeb-card')
+
+        const celebContainerUl = document.createElement("ul")
+
+
+        signObj.forEach(item => {
+
+            item.famous_people.forEach(celeb => {
+                const celebLi = document.createElement('li')
+                console.log(celeb)
+                celebLi.textContent = celeb
+                celebContainerUl.appendChild(celebLi)
+            })
+
+        })
+
+        celebCard.innerHTML = `
+            <h2>Celebrities</h2>
+        `
+        celebCard.appendChild(celebContainerUl)
+
+        menuStars.appendChild(celebCard)
+
+
+    }
     
     const deleteFav = (button) => {
         const favId = button.parentElement.dataset.id

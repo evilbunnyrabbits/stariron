@@ -102,6 +102,10 @@ h3 {
     text-align: center;
 }
 
+#celeb-card {
+    margin-left: 10px;
+}
+
 
 
 @keyframes fadeIn {
