@@ -14,9 +14,9 @@ let h = window.innerHeight - 20;
 
 const menuStars = document.getElementById("menu-stars")
 const formCard = document.createElement('div')
-    formCard.setAttribute('class', 'card')
+formCard.setAttribute('class', 'card')
 const form = document.createElement('form')
-    form.classList = "form"
+form.classList = "form"
 
 document.addEventListener("DOMContentLoaded", evt => {
 
@@ -35,8 +35,76 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     formCard.append(form, mainButton)
 
+    const submitHandler = (user) => {
 
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            const form = e.target
+            updateUser(form, user)
+        })
+    }
 
+    const updateUser = (form, user) => {
+        const newUserName = form.name.value
+        const newUserBirthday = form.birthday.value
+
+        const data = {
+            name: newUserName,
+            birthday: newUserBirthday
+        }
+        const packet = {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
+            body: JSON.stringify(data)
+        }
+        fetch(usersUrl, packet)
+            .then(res => res.json())
+
+        let date = newUserBirthday.split('-')
+        let month = date[1]
+        let day = date[2]
+        menuStars.innerHTML = ""
+        let sign = calculateSun(month, day)
+
+        signCard.innerHTML = ""
+
+        getSunSign(user, sign)
+    }
+
+    const clickHandler = () => {
+        document.addEventListener("click", e => {
+            if (e.target.id === "1"){
+                menuStars.innerHTML = ""
+                getUser()
+                formCard.append(mainButton)
+                menuStars.append(formCard)
+                form.reset()
+            } else if(e.target.matches(".form-back-btn")){
+                menuStars.innerHTML = ""
+                getMainStars()
+            } else if(e.target.id === "sign-back-btn"){
+                menuStars.innerHTML = ""
+                formCard.append(mainButton)
+                menuStars.append(formCard)
+            } else if(e.target.id === "2"){
+                menuStars.innerHTML = ""
+                signCard.append(mainButton)
+                menuStars.append(signCard)
+            }  else if(e.target.matches(".fav-btn")){
+                const button = e.target
+                addToFavorite(button)
+            } else if(e.target.id === "3"){
+                menuStars.innerHTML = ""
+                renderFavCard(menuStars)
+            } else if(e.target.matches("button.delete-fav-button")) {
+                const button = e.target
+                deleteFav(button)
+            }
+        })
+    }
 
     const getMainStars = () => {
       for(let i=1; i < 4; i++) {
@@ -83,38 +151,6 @@ document.addEventListener("DOMContentLoaded", evt => {
             starContainer.append(x5star)
         }
 
-    }
-
-    const clickHandler = () => {
-      document.addEventListener("click", e => {
-          if (e.target.id === "1"){
-              menuStars.innerHTML = ""
-              getUser()
-              formCard.append(mainButton)
-              menuStars.append(formCard)
-              form.reset()
-          } else if(e.target.matches(".form-back-btn")){
-              menuStars.innerHTML = ""
-              getMainStars()
-          } else if(e.target.id === "sign-back-btn"){
-              menuStars.innerHTML = ""
-              formCard.append(mainButton)
-              menuStars.append(formCard)
-          } else if(e.target.id === "2"){
-              menuStars.innerHTML = ""
-              signCard.append(mainButton)
-              menuStars.append(signCard)
-          }  else if(e.target.matches(".fav-btn")){
-            const button = e.target
-            addToFavorite(button)
-          } else if(e.target.id === "3"){
-              menuStars.innerHTML = ""
-              renderFavCard(menuStars)
-          } else if(e.target.matches("button.delete-fav-button")) {
-              const button = e.target
-              deleteFav(button)
-          }
-      })
     }
 
     const addToFavorite = (button) => {
@@ -212,7 +248,7 @@ document.addEventListener("DOMContentLoaded", evt => {
         </br>
         <label>Date of Birth</label>
         <br>
-        <input type="date" id="birth-date" name="birth-date"
+        <input type="date" id="birth-date" name="birthday"
            value="${user.birthday}"
            min="1900-01-01" max="2022-12-31">
            <br>
@@ -220,39 +256,6 @@ document.addEventListener("DOMContentLoaded", evt => {
         <input type="submit" name="submit"></br></br>
         `
         submitHandler(user)
-    }
-
-    const submitHandler = (user) => {
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-
-            const birthDate = user.birthday
-            const name = user.name
-
-
-          fetch(usersUrl, {
-            method: 'PATCH', 
-            headers: {
-              "content-type": "application/json", 
-              "accepts": "application/json"
-            }, 
-            body:JSON.stringify({name: name, birthday: birthDate})
-          }) 
-          .then(resp => resp.json)
-            
-            // get sun sign info()
-            
-            let date = birthDate.split('-')
-            let month = date[1]
-            let day = date[2]
-            menuStars.innerHTML = ""
-            let sign = calculateSun(month, day)
-
-            signCard.innerHTML = ""
-
-            getSunSign(user, sign)
-            // form.reset()
-        })
     }
     
     const calculateSun = (month, day) => {
@@ -299,7 +302,6 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     const getSunSign = (user, sign) => {
 
-
       fetch(sunUrl)
       .then(resp => resp.json())
       .then(signs => renderSigns(signs, user, sign))
@@ -341,7 +343,6 @@ document.addEventListener("DOMContentLoaded", evt => {
 
             item.famous_people.forEach(celeb => {
                 const celebLi = document.createElement('li')
-                console.log(celeb)
                 celebLi.textContent = celeb
                 celebContainerUl.appendChild(celebLi)
             })
@@ -365,7 +366,7 @@ document.addEventListener("DOMContentLoaded", evt => {
         }
         fetch(favoritesUrl + favId, packet)
             .then(res => res.json())
-            .then(button.parentElement.remove())
+            .then(item => button.parentElement.remove())
     }
 
     generateStars()
