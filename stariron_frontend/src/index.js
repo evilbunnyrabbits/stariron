@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", evt => {
     signCard.setAttribute('class', 'card')
     signCard.setAttribute('id', 'sign-card')
 
-    formCard.append(form, mainButton)
+    formCard.append(form)
 
     const submitHandler = (user) => {
 
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", evt => {
                 menuStars.innerHTML = ""
                 signCard.append(mainButton)
                 menuStars.append(signCard)
-                renderSignIndex(menuStars)
+                getSunDataAgain(menuStars)
 
             }  else if(e.target.matches(".fav-btn")){
                 const button = e.target
@@ -369,7 +369,29 @@ document.addEventListener("DOMContentLoaded", evt => {
             .then(item => button.parentElement.remove())
     }
 
-    const renderSignIndex = (menuStars) => {
+    const getSunDataAgain = (menuStars) => {
+        fetch(sunUrl)
+            .then(res => res.json())
+            .then(data => renderSignIndex(data))
+    }
+
+    const renderSignIndex = (data) => {
+
+        let aris = data[0].mental_traits
+        let taurus = data[1].mental_traits
+        let gemini = data[2].mental_traits
+        let cancer = data[3].mental_traits
+        let leo = data[4].mental_traits
+        let virgo = data[5].mental_traits
+        let libra = data[6].mental_traits
+        let scorpio = data[7].mental_traits
+        let sagittarius = data[8].mental_traits
+        let capricorn = data[9].mental_traits
+        let aquarius = data[10].mental_traits
+        let pisces = data[11].mental_traits
+
+
+
 
         const signCard = document.querySelector("#sign-card")
         signCard.innerHTML = ""
@@ -386,24 +408,24 @@ document.addEventListener("DOMContentLoaded", evt => {
         const tableRow3 = document.createElement('tr')
 
         tableRow1.innerHTML = `
-                <td class="avatar" data-tooltip="Aries"><img src="https://www.horoscope.com/images-US/signs/profile-aries.png" alt="aries" style="width: 60px; height: 60px; margin: 15px"/></td>
-                <td class="avatar" data-tooltip="Taurus"><img src="https://cdn0.iconfinder.com/data/icons/astrology-numerology-and-horoscope/136/49-512.png" alt="ram" style="width: 60px; height: 60px; margin: 15px"/></td>
-                <td class="avatar" data-tooltip="Gemini"><img src="https://www.pngarts.com/files/1/Gemini-PNG-Download-Image-1.png" alt="Gemini" style="width: 60px; height: 60px; margin: 15px"/></td>
-                <td class="avatar" data-tooltip="Cancer"><img  src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-cancer.png" alt="cancer" style="width: 60px; height: 60px; margin: 15px"/></td>
+                <td class="avatar" data-tooltip="Aris - ${aris}"><img src="https://www.horoscope.com/images-US/signs/profile-aries.png" alt="aries" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Tarus - ${taurus}"><img src="https://cdn0.iconfinder.com/data/icons/astrology-numerology-and-horoscope/136/49-512.png" alt="ram" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Gemini - ${gemini}"><img src="https://www.pngarts.com/files/1/Gemini-PNG-Download-Image-1.png" alt="Gemini" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Cancer - ${cancer}"><img  src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-cancer.png" alt="cancer" class="sign-index-image"/></td>
             `
 
         tableRow2.innerHTML = `
-                <td class="avatar" data-tooltip="Leo"><img src="https://www.horoscope.com/images-US/signs/profile-leo.png" alt="leo" style="width: 60px; height: 60px; margin: 15px"/></td>
-                <td class="avatar" data-tooltip="Virgo"><img src="https://images.ctfassets.net/nonm77rtn1g8/5H43vn3wbZkLyiGuvkOB4m/2713f4a19fd54e67f369b192b5ebf69a/Virgo_Sign.png" alt="virgo" style="width: 60px; height: 60px; margin: 15px"/></td>
-                <td class="avatar" data-tooltip="Libra"><img src="https://pngriver.com/wp-content/uploads/2018/03/Download-Libra-PNG-Transparent-For-Designing-Projects.png" alt="Libra" style="width: 60px; height: 60px; margin: 15px"/></td>
-                <td class="avatar" data-tooltip="Scorpio"><img src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-scorpio.png" alt="scorpio" style="width: 60px; height: 60px; margin: 15px"/></td>
+                <td class="avatar" data-tooltip="Leo - ${leo}"><img src="https://www.horoscope.com/images-US/signs/profile-leo.png" alt="leo" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Virgo - ${virgo}"><img src="https://images.ctfassets.net/nonm77rtn1g8/5H43vn3wbZkLyiGuvkOB4m/2713f4a19fd54e67f369b192b5ebf69a/Virgo_Sign.png" alt="virgo" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Libra - ${libra}"><img src="https://pngriver.com/wp-content/uploads/2018/03/Download-Libra-PNG-Transparent-For-Designing-Projects.png" class="sign-index-image" alt="Libra"/></td>
+                <td class="avatar" data-tooltip="Scorpio - ${scorpio}"><img src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-scorpio.png" alt="scorpio" class="sign-index-image"/></td>
             `
 
         tableRow3.innerHTML = `
-                <td class="avatar" data-tooltip="Sagittarius"><img src="https://library.kissclipart.com/20180828/tsw/kissclipart-sagittarius-sign-clipart-astrological-sign-sagitta-36fabfa39108ee5c.jpg" alt="sagittarius" style="width: 60px; height: 60px; margin: 15px"/></td>
-                <td class="avatar" data-tooltip="Capricorn"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4GU8Dud-gJ3wqi0NsHz7CNK4m2MJxy24W7z3zppQqowSDWuft&s" alt="capricorn" style="width: 60px; height: 60px; margin: 15px"/></td>
-                <td class="avatar" data-tooltip="Aquarius"><img src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-aquarius.png" alt="aquarius" style="width: 60px; height: 60px; margin: 15px"/></td>
-                <td class="avatar" data-tooltip="Pisces"><img src="https://www.pngkey.com/png/full/82-826985_pisces-facts-pisces-zodiac-sign.png" alt="pisces" style="width: 60px; height: 60px; margin: 15px"/></td>
+                <td class="avatar" data-tooltip="Sagittarius - ${sagittarius}"><img src="https://www.pngarts.com/files/2/Sagittarius-PNG-Transparent-Image.png" alt="sagittarius" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Capricorn - ${capricorn}"><img src="https://i.dlpng.com/static/png/268300_preview.png" alt="capricorn" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Aquarius - ${aquarius}"><img src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-aquarius.png" alt="aquarius" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Pisces - ${pisces}"><img src="https://www.pngkey.com/png/full/82-826985_pisces-facts-pisces-zodiac-sign.png" alt="pisces" class="sign-index-image"/></td>
             `
 
         indexTable.append(tableRow1)

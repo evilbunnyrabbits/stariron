@@ -84,7 +84,6 @@ body {
 .form-back-btn {
     margin-left: 95%;
 
-
 }
 
 .delete-button {
@@ -123,6 +122,12 @@ h3 {
     margin-left:auto;
     margin-right:auto;
 
+}
+
+.sign-index-image {
+    width: 60px;
+    height: 60px;
+    margin: 15px
 }
 
 
@@ -173,12 +178,12 @@ h3 {
 }
 
  .avatar {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
+
+
         background-size: cover;
         background-position: center;
-        position: relative; 
+     position: relative;
+
     }
     .avatar::before, 
     .avatar::after {
@@ -202,7 +207,7 @@ h3 {
         text-align: center;
         width: max-content;
         border-radius: .3rem;
-        max-width: 100%;
+        max-width: 400%;
         background: var(--tooltip-color);
     }
 
