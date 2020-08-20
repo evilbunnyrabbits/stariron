@@ -2,6 +2,7 @@
 body {
     background-color: black;
     font-family: 'Source Sans Pro', sans-serif;
+    color: white
 }
 
 .star2px{
@@ -62,7 +63,9 @@ body {
 .card{
     width: 150%;
     align-content: center;
-    background: rgba(255,255,255,0.7);
+    /*background: rgba(255,255,255,0.7);*/
+    background: rgb(120,66,164);
+    background: radial-gradient(circle, rgba(120,66,164,1) 0%, rgba(38,0,71,1) 100%);
     border-radius: 15px;
     padding: 5%;
     height: fit-content;
@@ -91,11 +94,8 @@ body {
 
 .fav-object-div {
     text-align: center;
-    margin: 10px;
-    background: white;
     margin: 15px;
     padding: 15px;
-    background: white;
 }
 
 h3 {

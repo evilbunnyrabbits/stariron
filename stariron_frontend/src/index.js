@@ -44,6 +44,39 @@ document.addEventListener("DOMContentLoaded", evt => {
         })
     }
 
+    const clickHandler = () => {
+        document.addEventListener("click", e => {
+            if (e.target.id === "1"){
+                menuStars.innerHTML = ""
+                getUser()
+                formCard.append(mainButton)
+                menuStars.append(formCard)
+                form.reset()
+            } else if(e.target.matches(".form-back-btn")){
+                menuStars.innerHTML = ""
+                getMainStars()
+            } else if(e.target.id === "sign-back-btn"){
+                menuStars.innerHTML = ""
+                formCard.append(mainButton)
+                menuStars.append(formCard)
+            } else if(e.target.id === "2"){
+                menuStars.innerHTML = ""
+                signCard.append(mainButton)
+                menuStars.append(signCard)
+            }  else if(e.target.matches(".fav-btn")){
+                const button = e.target
+                button.setAttribute("style", "color: red")
+                addToFavorite(button)
+            } else if(e.target.id === "3"){
+                menuStars.innerHTML = ""
+                renderFavCard(menuStars)
+            } else if(e.target.matches("button.delete-fav-button")) {
+                const button = e.target
+                deleteFav(button)
+            }
+        })
+    }
+
     const updateUser = (form, user) => {
         const newUserName = form.name.value
         const newUserBirthday = form.birthday.value
@@ -127,39 +160,6 @@ document.addEventListener("DOMContentLoaded", evt => {
         celebCard.appendChild(celebContainerUl)
 
         menuStars.appendChild(celebCard)
-    }
-
-    const clickHandler = () => {
-        document.addEventListener("click", e => {
-            if (e.target.id === "1"){
-                menuStars.innerHTML = ""
-                getUser()
-                formCard.append(mainButton)
-                menuStars.append(formCard)
-                form.reset()
-            } else if(e.target.matches(".form-back-btn")){
-                menuStars.innerHTML = ""
-                getMainStars()
-            } else if(e.target.id === "sign-back-btn"){
-                menuStars.innerHTML = ""
-                formCard.append(mainButton)
-                menuStars.append(formCard)
-            } else if(e.target.id === "2"){
-                menuStars.innerHTML = ""
-                signCard.append(mainButton)
-                menuStars.append(signCard)
-            }  else if(e.target.matches(".fav-btn")){
-                const button = e.target
-                button.setAttribute("style", "color: red")
-                addToFavorite(button)
-            } else if(e.target.id === "3"){
-                menuStars.innerHTML = ""
-                renderFavCard(menuStars)
-            } else if(e.target.matches("button.delete-fav-button")) {
-                const button = e.target
-                deleteFav(button)
-            }
-        })
     }
 
     const getMainStars = () => {
@@ -319,12 +319,6 @@ document.addEventListener("DOMContentLoaded", evt => {
             return sign
           }
     }
-
-
-
-
-
-
 
     const renderFavCard = (menuStars) => {
         const favCard = document.createElement('div')
