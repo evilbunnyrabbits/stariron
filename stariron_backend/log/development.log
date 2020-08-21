@@ -19097,3 +19097,224 @@ Processing by UsersController#show as */*
 Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 739)
 
 
+Started GET "/users/1" for 127.0.0.1 at 2020-08-21 11:02:48 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 14ms (Views: 0.6ms | ActiveRecord: 3.8ms | Allocations: 6091)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:02:49 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1206)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-21 11:03:12 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 757)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-21 11:03:16 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 24ms (Views: 4.0ms | ActiveRecord: 3.0ms | Allocations: 5255)
+
+
+Started GET "/sign_object/93" for 127.0.0.1 at 2020-08-21 11:03:16 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"93"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 5382)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-21 11:03:35 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 755)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:03:37 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 989)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:03:37 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 989)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-21 11:04:06 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 741)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:04:08 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 989)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:04:08 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 989)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:04:08 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 989)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-21 11:04:44 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 741)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:04:45 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 989)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-21 11:04:52 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 923)
+
+
+Started GET "/sign_object/93" for 127.0.0.1 at 2020-08-21 11:04:52 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"93"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 733)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-21 11:04:54 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 739)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-21 11:04:59 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 739)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:05:00 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 989)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:05:00 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 989)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-21 11:05:08 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 925)
+
+
+Started GET "/sign_object/93" for 127.0.0.1 at 2020-08-21 11:05:08 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"93"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 733)
+
+
+Started GET "/favorites/" for 127.0.0.1 at 2020-08-21 11:05:11 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:5:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 921)
+
+
+Started GET "/sign_object/93" for 127.0.0.1 at 2020-08-21 11:05:11 -0400
+Processing by SignObjectController#show as */*
+  Parameters: {"id"=>"93"}
+  [1m[36mSignObject Load (0.2ms)[0m  [1m[34mSELECT "sign_objects".* FROM "sign_objects" WHERE "sign_objects"."id" = $1 LIMIT $2[0m  [["id", 93], ["LIMIT", 1]]
+  ↳ app/controllers/sign_object_controller.rb:14:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 733)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-08-21 11:05:13 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 739)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:05:14 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 987)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:05:14 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 989)
+
+
+Started PATCH "/users/1" for 127.0.0.1 at 2020-08-21 11:05:14 -0400
+Processing by UsersController#update as JSON
+  Parameters: {"name"=>"Ben Garlock", "birthday"=>"1983-05-02", "id"=>"1", "user"=>{"name"=>"Ben Garlock", "birthday"=>"1983-05-02"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `update'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 989)
+
+

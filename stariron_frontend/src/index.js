@@ -89,6 +89,9 @@ document.addEventListener("DOMContentLoaded", evt => {
         })
     }
 
+
+
+
     const updateUser = (form, user) => {
         const newUserName = form.name.value
         const newUserBirthday = form.birthday.value
@@ -199,6 +202,7 @@ document.addEventListener("DOMContentLoaded", evt => {
 
       goodTraitsCard.append(goodTraits)
       badTraitsCard.append(badTraits)
+        extraDiv.innerHTML = ''
       extraDiv.append(goodTraitsCard, badTraitsCard)
     }
 
