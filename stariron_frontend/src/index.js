@@ -112,9 +112,11 @@ document.addEventListener("DOMContentLoaded", evt => {
         let month = date[1]
         let day = date[2]
         menuStars.innerHTML = ""
+        
         let sign = calculateSun(month, day)
 
         signCard.innerHTML = ""
+        extraDiv.innerHTML = ""
 
         getSunSign(user, sign)
     }
@@ -196,9 +198,10 @@ document.addEventListener("DOMContentLoaded", evt => {
       badTraitsCard.innerHTML = `
           <h2>Bad Traits</h2>
       `
-
+      
       goodTraitsCard.append(goodTraits)
       badTraitsCard.append(badTraits)
+      extraDiv.innerHTML = ""
       extraDiv.append(goodTraitsCard, badTraitsCard)
     }
 
