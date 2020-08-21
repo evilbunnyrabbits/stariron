@@ -1,16 +1,16 @@
 const proxyurl = "https://cors-anywhere.herokuapp.com/"
 const url = "https://zodiacal.herokuapp.com/" 
 const sunUrl = proxyurl + url + "api"
-const moonUrl = proxyurl + url + "moon"
-const risingUrl = proxyurl + url + "rising"
-const elementsUrl = proxyurl + url + "elements"
-const cardinalityUrl = proxyurl + url + "cardinalities"
 const signObjectUrl = "http://127.0.0.1:3000/sign_object/"
 const favoritesUrl = "http://127.0.0.1:3000/favorites/"
 const usersUrl = "http://127.0.0.1:3000/users/1"
 
 let w = window.innerWidth - 20;
 let h = window.innerHeight - 20;
+const transDiv = document.querySelector('#trans-div')
+const extraDiv = document.querySelector('#extra-div')
+let br = document.createElement('br')
+
 
 const menuStars = document.getElementById("menu-stars")
 const formCard = document.createElement('div')
@@ -32,6 +32,10 @@ document.addEventListener("DOMContentLoaded", evt => {
     const signCard = document.createElement('div')
     signCard.setAttribute('class', 'card')
     signCard.setAttribute('id', 'sign-card')
+
+    let favBtn = document.createElement('button')
+    favBtn.classList = "fav-btn", "btn btn-white btn-animated"
+    favBtn.innerHTML = `&#x2665;`
 
     formCard.append(form)
 
@@ -55,16 +59,17 @@ document.addEventListener("DOMContentLoaded", evt => {
             } else if(e.target.matches(".form-back-btn")){
                 menuStars.innerHTML = ""
                 getMainStars()
+                transDiv.innerHTML = ""
+                extraDiv.innerHTML = ""
             } else if(e.target.id === "sign-back-btn"){
                 menuStars.innerHTML = ""
                 formCard.append(mainButton)
                 menuStars.append(formCard)
+                transDiv.innerHTML = ""
+                extraDiv.innerHTML = ""
             } else if(e.target.id === "2"){
                 menuStars.innerHTML = ""
-                signCard.append(mainButton)
-                menuStars.append(signCard)
                 getSunDataAgain(menuStars)
-
             }  else if(e.target.matches(".fav-btn")){
                 const button = e.target
                 button.setAttribute("style", "color: red")
@@ -75,6 +80,11 @@ document.addEventListener("DOMContentLoaded", evt => {
             } else if(e.target.matches("button.delete-fav-button")) {
                 const button = e.target
                 deleteFav(button)
+            } else if(e.target.matches(".back-to-index")){
+                menuStars.innerHTML = ""
+                getSunDataAgain(menuStars)
+                transDiv.innerHTML = ""
+                extraDiv.innerHTML = ""
             }
         })
     }
@@ -125,37 +135,93 @@ document.addEventListener("DOMContentLoaded", evt => {
         favBtn.innerHTML = `&#x2665;`
 
         signCard.innerHTML = ''
-        let br = document.createElement('br')
+        
         favBtn.dataset.id = user.id
         if (signName != null || undefined) {
             favBtn.dataset.id = user.id
             let signObj = signs.filter(name => name.name === signName)
+            let zodiac = zodiacSignObj.filter(thing => thing.name === signName)
+            console.log(zodiac[0].img)
+
+            transDiv.innerHTML=`
+            <h1 class="sign-name">${signName}</h2>
+            <img src="${zodiac[0].img}" alt="${zodiac[0].name}" class="sign-main">
+          `
+
             signCard.innerHTML = `
             <h2 id="sign-name">${signName}</h2>
             <p>${signObj[0].mental_traits}</p>            
             `
             signCard.append(br, favBtn)
             signCard.append(mainButton, backToForm)
+
             menuStars.append(signCard)
 
             renderCelebBox(signObj)
+            renderExtraDiv(signObj)
         }}
+
+    const renderExtraDiv = (signObj) => {
+    
+    const goodTraitsCard = document.createElement('div')
+    goodTraitsCard.setAttribute('class', 'card')
+    goodTraitsCard.setAttribute('id', 'good-traits-card')
+
+    const badTraitsCard = document.createElement('div')
+    badTraitsCard.setAttribute('class', 'card')
+    badTraitsCard.setAttribute('id', 'bad-traits-card')
+
+      const goodTraits = document.createElement("ul")
+      signObj.forEach(item => {
+
+          item.good_traits.forEach(trait => {
+              const goodLi = document.createElement('li')
+              goodLi.textContent = trait
+              goodTraits.appendChild(goodLi)
+          })
+      })
+      goodTraitsCard.innerHTML = `
+          <h2>Good Traits</h2>
+      `
+
+      const badTraits = document.createElement("ul")
+      signObj.forEach(item => {
+
+          item.bad_traits.forEach(trait => {
+              const badLi = document.createElement('li')
+              badLi.textContent = trait
+              badTraits.appendChild(badLi)
+          })
+      })
+      badTraitsCard.innerHTML = `
+          <h2>Bad Traits</h2>
+      `
+
+      goodTraitsCard.append(goodTraits)
+      badTraitsCard.append(badTraits)
+      extraDiv.append(goodTraitsCard, badTraitsCard)
+    }
 
     const renderCelebBox = (signObj) => {
 
         const celebCard = document.createElement('div')
         celebCard.setAttribute('class', 'card')
         celebCard.setAttribute('id', 'celeb-card')
-
+        let celebs = signObj[0].famous_people
+        let crowd = celebs.length
+        let celebrities = []
+          for (var i = 0; i < 10; i++) {
+            var rand = celebs[Math.floor(Math.random() * crowd)];
+            celebrities.push(rand);
+          }
+          
+    
         const celebContainerUl = document.createElement("ul")
-        signObj.forEach(item => {
-
-            item.famous_people.forEach(celeb => {
+        celebrities.forEach(celeb => {
                 const celebLi = document.createElement('li')
                 celebLi.textContent = celeb
                 celebContainerUl.appendChild(celebLi)
             })
-        })
         celebCard.innerHTML = `
             <h2>Celebrities</h2>
         `
@@ -177,7 +243,7 @@ document.addEventListener("DOMContentLoaded", evt => {
     const mainStar1 = document.getElementById('1')
     mainStar1.dataset.tooltip = "My Sign"
     const mainStar2 = document.getElementById('2')
-    mainStar2.dataset.tooltip = "thinkingCat"
+    mainStar2.dataset.tooltip = "Sun Signs"
     const mainStar3 = document.getElementById('3')
     mainStar3.dataset.tooltip = "Favorite Collection"
 
@@ -377,25 +443,25 @@ document.addEventListener("DOMContentLoaded", evt => {
 
     const renderSignIndex = (data) => {
 
-        let aris = data[0].mental_traits
-        let taurus = data[1].mental_traits
-        let gemini = data[2].mental_traits
-        let cancer = data[3].mental_traits
-        let leo = data[4].mental_traits
-        let virgo = data[5].mental_traits
-        let libra = data[6].mental_traits
-        let scorpio = data[7].mental_traits
-        let sagittarius = data[8].mental_traits
-        let capricorn = data[9].mental_traits
-        let aquarius = data[10].mental_traits
-        let pisces = data[11].mental_traits
+        let aries = data[0].symbol
+        let taurus = data[1].symbol
+        let gemini = data[2].symbol
+        let cancer = data[3].symbol
+        let leo = data[4].symbol
+        let virgo = data[5].symbol
+        let libra = data[6].symbol
+        let scorpio = data[7].symbol
+        let sagittarius = data[8].symbol
+        let capricorn = data[9].symbol
+        let aquarius = data[10].symbol
+        let pisces = data[11].symbol
 
+        const indexCard = document.createElement('div')
+        indexCard.setAttribute('class', 'card')
+        indexCard.setAttribute('id', 'index-card')
 
-
-
-        const signCard = document.querySelector("#sign-card")
-        signCard.innerHTML = ""
-        signCard.append(mainButton)
+        indexCard.append(mainButton)
+        menuStars.append(indexCard)
 
         const indexContainer = document.createElement("div")
         indexContainer.classList.add("sign-index-container")
@@ -408,24 +474,24 @@ document.addEventListener("DOMContentLoaded", evt => {
         const tableRow3 = document.createElement('tr')
 
         tableRow1.innerHTML = `
-                <td class="avatar" data-tooltip="Aris - ${aris}"><img src="https://www.horoscope.com/images-US/signs/profile-aries.png" alt="aries" class="sign-index-image"/></td>
-                <td class="avatar" data-tooltip="Tarus - ${taurus}"><img src="https://cdn0.iconfinder.com/data/icons/astrology-numerology-and-horoscope/136/49-512.png" alt="ram" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Aries - ${aries}"><img src="https://www.horoscope.com/images-US/signs/profile-aries.png" alt="Aries" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Taurus - ${taurus}"><img src="https://cdn0.iconfinder.com/data/icons/astrology-numerology-and-horoscope/136/49-512.png" alt="Taurus" class="sign-index-image"/></td>
                 <td class="avatar" data-tooltip="Gemini - ${gemini}"><img src="https://www.pngarts.com/files/1/Gemini-PNG-Download-Image-1.png" alt="Gemini" class="sign-index-image"/></td>
-                <td class="avatar" data-tooltip="Cancer - ${cancer}"><img  src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-cancer.png" alt="cancer" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Cancer - ${cancer}"><img  src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-cancer.png" alt="Cancer" class="sign-index-image"/></td>
             `
 
         tableRow2.innerHTML = `
                 <td class="avatar" data-tooltip="Leo - ${leo}"><img src="https://www.horoscope.com/images-US/signs/profile-leo.png" alt="leo" class="sign-index-image"/></td>
-                <td class="avatar" data-tooltip="Virgo - ${virgo}"><img src="https://images.ctfassets.net/nonm77rtn1g8/5H43vn3wbZkLyiGuvkOB4m/2713f4a19fd54e67f369b192b5ebf69a/Virgo_Sign.png" alt="virgo" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Virgo - ${virgo}"><img src="https://images.ctfassets.net/nonm77rtn1g8/5H43vn3wbZkLyiGuvkOB4m/2713f4a19fd54e67f369b192b5ebf69a/Virgo_Sign.png" alt="Virgo" class="sign-index-image"/></td>
                 <td class="avatar" data-tooltip="Libra - ${libra}"><img src="https://pngriver.com/wp-content/uploads/2018/03/Download-Libra-PNG-Transparent-For-Designing-Projects.png" class="sign-index-image" alt="Libra"/></td>
-                <td class="avatar" data-tooltip="Scorpio - ${scorpio}"><img src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-scorpio.png" alt="scorpio" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Scorpio - ${scorpio}"><img src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-scorpio.png" alt="Scorpio" class="sign-index-image"/></td>
             `
 
         tableRow3.innerHTML = `
-                <td class="avatar" data-tooltip="Sagittarius - ${sagittarius}"><img src="https://www.pngarts.com/files/2/Sagittarius-PNG-Transparent-Image.png" alt="sagittarius" class="sign-index-image"/></td>
-                <td class="avatar" data-tooltip="Capricorn - ${capricorn}"><img src="https://i.dlpng.com/static/png/268300_preview.png" alt="capricorn" class="sign-index-image"/></td>
-                <td class="avatar" data-tooltip="Aquarius - ${aquarius}"><img src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-aquarius.png" alt="aquarius" class="sign-index-image"/></td>
-                <td class="avatar" data-tooltip="Pisces - ${pisces}"><img src="https://www.pngkey.com/png/full/82-826985_pisces-facts-pisces-zodiac-sign.png" alt="pisces" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Sagittarius - ${sagittarius}"><img src="https://www.pngarts.com/files/2/Sagittarius-PNG-Transparent-Image.png" alt="Sagittarius" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Capricorn - ${capricorn}"><img src="https://i.dlpng.com/static/png/268300_preview.png" alt="Capricorn" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Aquarius - ${aquarius}"><img src="https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-aquarius.png" alt="Aquarius" class="sign-index-image"/></td>
+                <td class="avatar" data-tooltip="Pisces - ${pisces}"><img src="https://www.pngkey.com/png/full/82-826985_pisces-facts-pisces-zodiac-sign.png" alt="Pisces" class="sign-index-image"/></td>
             `
 
         indexTable.append(tableRow1)
@@ -434,10 +500,120 @@ document.addEventListener("DOMContentLoaded", evt => {
 
         indexContainer.append(indexTable)
 
-        signCard.append(indexContainer)
+        indexCard.append(indexContainer)
+        
+        indexEventHandler(data)
     }
 
+    const indexEventHandler = (data) => {
+      
+      document.addEventListener('click', e => {
+        if(e.target.matches('.sign-index-image')){
+          let sign = e.target.alt
+          if(sign === sign){
+            
+            let newData = data.filter(name => name.name === sign)
+            
+            showThisSign(sign,newData)
+            
+          }
+        }
+      })
+    }
+    const showThisSign = (sign, newData) => {
+      extraDiv.innerHTML = ""
+      menuStars.innerHTML = ""
+  
+      signCard.innerHTML = ""
+      favBtn.dataset.id = 1
+  
+      
+
+      let zodiac = zodiacSignObj.filter(thing => thing.name === sign)
+      transDiv.innerHTML=`
+      <h1 class="sign-name">${sign}</h1>
+      <img src="${zodiac[0].img}" alt="${zodiac[0].name}" class="sign-main">
+      `
+  
+      signCard.innerHTML = `
+      <button class="back-to-index" class="btn btn-white btn-animated">sun sign</button>
+      <p>${newData[0].mental_traits}</p>            
+      `
+      signCard.append(br, favBtn)
+      signCard.append(mainButton)
+  
+      menuStars.append(signCard)
+  
+      renderCelebBox(newData)
+      renderExtraDiv(newData)
+      
+  }
+
+    indexEventHandler()
     generateStars()
     clickHandler()
 
 })
+
+const zodiacSignObj = [
+  {
+      id: "1", 
+      name: "Aries",
+      img: "https://www.horoscope.com/images-US/signs/profile-aries.png",
+  }, 
+  {
+      id: "2", 
+      name: "Taurus",
+      img: "https://cdn0.iconfinder.com/data/icons/astrology-numerology-and-horoscope/136/49-512.png",
+  },  
+  {
+      id: "3", 
+      name: "Gemini",
+      img: "https://www.pngarts.com/files/1/Gemini-PNG-Download-Image-1.png",
+  }, 
+  {
+      id: "4", 
+      name: "Cancer",
+      img: "https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-cancer.png",
+  }, 
+  {
+      id: "5", 
+      name: "Leo",
+      img: "https://www.horoscope.com/images-US/signs/profile-leo.png",
+  }, 
+  {
+      id: "6", 
+      name: "Virgo",
+      img: "https://images.ctfassets.net/nonm77rtn1g8/5H43vn3wbZkLyiGuvkOB4m/2713f4a19fd54e67f369b192b5ebf69a/Virgo_Sign.png",
+  }, 
+  {
+      id: "7", 
+      name: "Libra",
+      img: "https://pngriver.com/wp-content/uploads/2018/03/Download-Libra-PNG-Transparent-For-Designing-Projects.png",
+  }, 
+  {
+      id: "8", 
+      name: "Scorpio",
+      img: "https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-scorpio.png",
+  }, 
+  {
+      id: "9", 
+      name: "Sagittarius",
+      img: "https://www.pngarts.com/files/2/Sagittarius-PNG-Transparent-Image.png",
+  }, 
+  {
+      id: "10", 
+      name: "Capricorn",
+      img: "https://i.dlpng.com/static/png/268300_preview.png",
+  }, 
+  {
+      id: "11", 
+      name: "Aquarius",
+      img: "https://daily.swarthmore.edu/wp-content/uploads/2017/09/profile-aquarius.png",
+  }, 
+  {
+      id: "12", 
+      name: "Pisces",
+      img: "https://www.pngkey.com/png/full/82-826985_pisces-facts-pisces-zodiac-sign.png",
+  }
+]
